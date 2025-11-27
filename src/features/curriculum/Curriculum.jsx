@@ -1,241 +1,237 @@
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import Chip from '@mui/material/Chip'
-import LinearProgress from '@mui/material/LinearProgress'
-import { 
-  BookOpen, 
-  Play, 
-  Clock, 
-  Award,
-  CheckCircle2,
-  Lock,
-  Star,
-  ArrowRight
-} from 'lucide-react'
-import Button from '../../components/Button'
-
-const courses = [
-  {
-    title: 'Advanced Root Canal Techniques',
-    description: 'Master the latest endodontic procedures and technologies.',
-    duration: '4 hours',
-    lessons: 12,
-    progress: 75,
-    status: 'in_progress',
-    rating: 4.8,
-  },
-  {
-    title: 'Digital Dentistry Fundamentals',
-    description: 'Introduction to CAD/CAM and digital workflow in dental practice.',
-    duration: '6 hours',
-    lessons: 18,
-    progress: 100,
-    status: 'completed',
-    rating: 4.9,
-  },
-  {
-    title: 'Pediatric Dentistry Best Practices',
-    description: 'Learn effective techniques for treating young patients.',
-    duration: '3 hours',
-    lessons: 10,
-    progress: 30,
-    status: 'in_progress',
-    rating: 4.7,
-  },
-  {
-    title: 'Implantology Masterclass',
-    description: 'Comprehensive guide to dental implant procedures.',
-    duration: '8 hours',
-    lessons: 24,
-    progress: 0,
-    status: 'locked',
-    rating: 4.9,
-  },
-]
+import { Link } from 'react-router-dom'
 
 const Curriculum = () => {
   return (
-    <Box className="space-y-6">
-      {/* Page Header */}
-      <Box className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <Box>
-          <Typography variant="h4" fontWeight={700} color="primary.main">
-            Learning Curriculum
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Continue your professional development journey
-          </Typography>
-        </Box>
-        <Box className="flex items-center gap-3">
-          <Box className="text-right">
-            <Typography variant="h5" fontWeight={700} sx={{ color: '#d4af37' }}>
-              156
-            </Typography>
-            <Typography variant="caption" color="text.secondary">
-              CE Credits Earned
-            </Typography>
-          </Box>
-          <Box 
-            className="p-3 rounded-xl"
-            sx={{ 
-              background: 'linear-gradient(135deg, #d4af37 0%, #b8952e 100%)',
-            }}
-          >
-            <Award className="w-6 h-6 text-white" />
-          </Box>
-        </Box>
-      </Box>
+    <div className="container">
+      <div className="card fade-in">
+        <h1 className="card-title">Your Personalized Curriculum</h1>
+        <p className="card-subtitle">Dynamic Courses Generated from Your Tax Plan</p>
 
-      {/* Stats */}
-      <Grid container spacing={3}>
-        {[
-          { label: 'Courses Completed', value: '8', icon: CheckCircle2, color: '#28a745' },
-          { label: 'In Progress', value: '3', icon: Play, color: '#1a2332' },
-          { label: 'Total Hours', value: '42', icon: Clock, color: '#4a90e2' },
-          { label: 'Certificates', value: '5', icon: Award, color: '#d4af37' },
-        ].map((stat, index) => {
-          const Icon = stat.icon
-          return (
-            <Grid item xs={6} md={3} key={index}>
-              <Card className="hover-lift">
-                <CardContent className="flex items-center gap-3">
-                  <Box 
-                    className="p-2 rounded-lg"
-                    sx={{ bgcolor: `${stat.color}15` }}
-                  >
-                    <Icon className="w-5 h-5" style={{ color: stat.color }} />
-                  </Box>
-                  <Box>
-                    <Typography variant="h5" fontWeight={700} color="primary.main">
-                      {stat.value}
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          )
-        })}
-      </Grid>
+        <div className="alert alert-info mt-3">
+          <strong>📊 Tailored to Your Strategy</strong><br />
+          These courses are automatically generated based on the specific tax strategies selected in your personalized tax plan. As you update your plan, your curriculum will adapt to match.
+        </div>
 
-      {/* Courses Grid */}
-      <Typography variant="h6" fontWeight={600} color="primary.main" sx={{ mt: 4 }}>
-        Your Courses
-      </Typography>
-      
-      <Grid container spacing={3}>
-        {courses.map((course, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Card className="hover-lift h-full">
-              <CardContent>
-                <Box className="flex items-start justify-between mb-3">
-                  <Box 
-                    className="p-3 rounded-xl"
-                    sx={{ 
-                      background: course.status === 'locked' 
-                        ? 'linear-gradient(135deg, #8b95a5 0%, #6c757d 100%)'
-                        : 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)',
-                      border: course.status !== 'locked' ? '2px solid #d4af37' : 'none',
-                    }}
-                  >
-                    {course.status === 'locked' ? (
-                      <Lock className="w-5 h-5 text-white" />
-                    ) : (
-                      <BookOpen className="w-5 h-5 text-white" />
-                    )}
-                  </Box>
-                  <Chip 
-                    label={
-                      course.status === 'completed' ? 'Completed' :
-                      course.status === 'in_progress' ? 'In Progress' : 'Locked'
-                    }
-                    size="small"
-                    sx={{ 
-                      fontWeight: 600,
-                      bgcolor: course.status === 'completed' ? '#28a74515' :
-                               course.status === 'in_progress' ? '#1a233215' : 'grey.200',
-                      color: course.status === 'completed' ? '#28a745' :
-                             course.status === 'in_progress' ? '#1a2332' : 'grey.600',
-                    }}
-                  />
-                </Box>
+        <div className="progress-container mt-3">
+          <div className="progress-label">
+            <span>Overall Progress</span>
+            <span>15%</span>
+          </div>
+          <div className="progress-bar">
+            <div className="progress-fill" style={{ width: '15%' }}>15%</div>
+          </div>
+        </div>
 
-                <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
-                  {course.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                  {course.description}
-                </Typography>
+        <div className="mt-3" style={{ padding: '1rem', background: 'var(--silver-light)', borderRadius: '8px' }}>
+          <p><strong>Completion Requirement:</strong> Achieve 70% completion in each course to unlock certification</p>
+        </div>
+      </div>
 
-                {/* Meta */}
-                <Box className="flex items-center gap-4 mb-3">
-                  <Box className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" style={{ color: '#8b95a5' }} />
-                    <Typography variant="caption" color="text.secondary">
-                      {course.duration}
-                    </Typography>
-                  </Box>
-                  <Box className="flex items-center gap-1">
-                    <Play className="w-4 h-4" style={{ color: '#8b95a5' }} />
-                    <Typography variant="caption" color="text.secondary">
-                      {course.lessons} lessons
-                    </Typography>
-                  </Box>
-                  <Box className="flex items-center gap-1">
-                    <Star className="w-4 h-4" style={{ color: '#d4af37', fill: '#d4af37' }} />
-                    <Typography variant="caption" color="text.secondary">
-                      {course.rating}
-                    </Typography>
-                  </Box>
-                </Box>
+      {/* Pillar 1: Business Foundation */}
+      <div className="card mt-4 fade-in" style={{ borderLeft: '4px solid var(--accent-blue)' }}>
+        <h2 className="card-title">📘 Pillar 1: Business Foundation</h2>
+        <p className="mt-2" style={{ color: '#666' }}>Courses in this pillar are based on your business structure selections</p>
 
-                {/* Progress */}
-                {course.status !== 'locked' && (
-                  <Box className="mb-4">
-                    <Box className="flex justify-between mb-1">
-                      <Typography variant="caption" color="text.secondary">
-                        Progress
-                      </Typography>
-                      <Typography variant="caption" fontWeight={600}>
-                        {course.progress}%
-                      </Typography>
-                    </Box>
-                    <LinearProgress 
-                      variant="determinate" 
-                      value={course.progress}
-                      sx={{ 
-                        height: 6, 
-                        borderRadius: 3,
-                        bgcolor: 'grey.200',
-                        '& .MuiLinearProgress-bar': {
-                          bgcolor: course.progress === 100 ? '#28a745' : '#1a2332',
-                        }
-                      }}
-                    />
-                  </Box>
-                )}
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Entity Structuring & S-Corp Benefits</h3>
+              <p className="mt-2">Choose the right business structure and save $15K-$40K/year on self-employment taxes.</p>
+              <p className="mt-1"><strong>Key Learning:</strong> LLC vs S-Corp vs C-Corp optimization</p>
+              <p className="mt-1"><em style={{ color: 'var(--accent-blue)' }}>✓ Active in your tax plan</em></p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-warning">In Progress</span>
+              <div className="mt-2">
+                <Link to="/curriculum" className="btn btn-primary btn-sm">Continue</Link>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <Button 
-                  variant={course.status === 'locked' ? 'outlined' : 'contained'}
-                  color={course.status === 'locked' ? 'primary' : 'secondary'}
-                  fullWidth
-                  disabled={course.status === 'locked'}
-                  endIcon={course.status !== 'locked' && <ArrowRight className="w-4 h-4" />}
-                >
-                  {course.status === 'completed' ? 'Review Course' :
-                   course.status === 'in_progress' ? 'Continue' : 'Unlock Course'}
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Asset Protection Strategies</h3>
+              <p className="mt-2">Shield your wealth from lawsuits, creditors, and business risks with legal structures.</p>
+              <p className="mt-1"><strong>Key Learning:</strong> Multi-entity structures and protection layers</p>
+              <p className="mt-1"><em style={{ color: 'var(--accent-blue)' }}>✓ Active in your tax plan</em></p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+              <div className="mt-2">
+                <button className="btn btn-secondary btn-sm" disabled>Complete Previous First</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pillar 2: Personal Tax Optimization */}
+      <div className="card mt-4 fade-in" style={{ borderLeft: '4px solid var(--accent-gold)' }}>
+        <h2 className="card-title">💰 Pillar 2: Personal Tax Optimization</h2>
+        <p className="mt-2" style={{ color: '#666' }}>Courses in this pillar match your personal tax strategy selections</p>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>IRC §469 - Passive Loss Planning</h3>
+              <p className="mt-2">Become a Real Estate Professional on paper and unlock massive tax deductions.</p>
+              <p className="mt-1"><strong>Potential Savings:</strong> $30K-$100K+ annually</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>IRC §7702 - Private Banking Strategy</h3>
+              <p className="mt-2">Build your own tax-free bank using specially designed life insurance policies.</p>
+              <p className="mt-1"><strong>Key Benefit:</strong> Tax-free growth and withdrawals for life</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Augusta Rule (IRC §280A)</h3>
+              <p className="mt-2">Rent your home to your business for up to 14 days/year, tax-free income.</p>
+              <p className="mt-1"><strong>Potential Savings:</strong> $10K-$50K tax-free income</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pillar 3: Retirement & Investment Mastery */}
+      <div className="card mt-4 fade-in" style={{ borderLeft: '4px solid var(--success)' }}>
+        <h2 className="card-title">🏦 Pillar 3: Retirement & Investment</h2>
+        <p className="mt-2" style={{ color: '#666' }}>Courses in this pillar align with your retirement and investment strategies</p>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Defined Benefit Plans & Cash Balance Plans</h3>
+              <p className="mt-2">Contribute $100K-$300K+ per year to retirement, fully tax-deductible.</p>
+              <p className="mt-1"><strong>Best For:</strong> High-income dentists age 45+</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>IRC §1031 Exchanges</h3>
+              <p className="mt-2">Defer capital gains taxes indefinitely by rolling property sales into new investments.</p>
+              <p className="mt-1"><strong>Potential Savings:</strong> 15-20% capital gains tax deferred</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pillar 4: Legacy & Advanced Strategies */}
+      <div className="card mt-4 fade-in" style={{ borderLeft: '4px solid #764ba2' }}>
+        <h2 className="card-title">🏛️ Pillar 4: Legacy & Advanced Strategies</h2>
+        <p className="mt-2" style={{ color: '#666' }}>Advanced courses based on your legacy and wealth transfer goals</p>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Captive Insurance (IRC §831(b))</h3>
+              <p className="mt-2">Create your own insurance company, deduct up to $2.8M, grow funds tax-free.</p>
+              <p className="mt-1"><strong>Best For:</strong> Multi-location practices, $1M+ income</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Estate Planning & Wealth Transfer</h3>
+              <p className="mt-2">Minimize estate taxes and transfer wealth to heirs tax-efficiently using trusts.</p>
+              <p className="mt-1"><strong>Key Tools:</strong> GRATs, IDGTs, Family LLCs, Dynasty Trusts</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>EXIT & SALE OF PRACTICE - The R.O.B.S. Roth 401(k) Strategy</h3>
+              <p className="mt-2">Retire tax-free by selling your practice to yourself using a specially structured retirement plan.</p>
+              <p className="mt-1"><strong>Key Strategy:</strong> 98% Roth 401(k) / 2% Personal ownership structure for tax-free exit</p>
+              <p className="mt-1"><strong>Potential Benefit:</strong> Tax-free sale proceeds and retirement distributions</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="card mt-3" style={{ background: 'var(--silver-light)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <h3>Tax Plan Integration & Implementation</h3>
+              <p className="mt-2">Combine all strategies into your personalized tax architecture blueprint with actionable steps.</p>
+              <p className="mt-1"><strong>Deliverable:</strong> Your complete implementation roadmap with timeline</p>
+            </div>
+            <div style={{ marginLeft: '2rem' }}>
+              <span className="badge badge-primary">Locked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Summary Stats */}
+      <div className="grid grid-3 mt-4 fade-in">
+        <div className="card text-center">
+          <h3>8</h3>
+          <p>Active Courses<br /><small style={{ color: '#666' }}>(from your plan)</small></p>
+        </div>
+
+        <div className="card text-center">
+          <h3>24+</h3>
+          <p>Implementation Tools<br /><small style={{ color: '#666' }}>(customized)</small></p>
+        </div>
+
+        <div className="card text-center">
+          <h3>$67,450</h3>
+          <p>Your Projected Savings<br /><small style={{ color: '#666' }}>(Year 1)</small></p>
+        </div>
+      </div>
+
+      <div className="card mt-4">
+        <div className="alert alert-success">
+          <strong>💡 Pro Tip:</strong> Your curriculum updates automatically when you modify your tax plan. Add or remove strategies anytime, and your courses will adapt accordingly.
+        </div>
+
+        <div className="btn-group btn-group-center mt-3">
+          <Link to="/dashboard" className="btn btn-secondary">Back to Dashboard</Link>
+          <Link to="/curriculum" className="btn btn-primary">Continue Learning →</Link>
+        </div>
+      </div>
+    </div>
   )
 }
 
