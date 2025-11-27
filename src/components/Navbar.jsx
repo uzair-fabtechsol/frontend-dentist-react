@@ -34,10 +34,8 @@ const Navbar = () => {
       component="nav"
       className="sticky top-[73px] z-40 overflow-x-auto"
       sx={{
-        bgcolor: 'white',
-        borderBottom: '1px solid',
-        borderColor: 'grey.200',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+        bgcolor: '#2d3e50', // --navy-secondary
+        borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
       }}
     >
       <Box 
@@ -57,13 +55,11 @@ const Navbar = () => {
               <Box
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-200"
                 sx={{
-                  bgcolor: active ? 'primary.main' : 'transparent',
-                  color: active ? 'white' : 'text.secondary',
-                  borderBottom: active ? '2px solid' : '2px solid transparent',
-                  borderColor: active ? 'secondary.main' : 'transparent',
+                  bgcolor: active ? '#1a2332' : 'transparent', // --navy-primary when active
+                  color: active ? '#d4af37' : '#c0c5ce', // --accent-gold when active, --silver-medium otherwise
                   '&:hover': {
-                    bgcolor: active ? 'primary.light' : 'grey.100',
-                    color: active ? 'white' : 'primary.main',
+                    bgcolor: active ? '#1a2332' : 'rgba(26, 35, 50, 0.5)',
+                    color: '#d4af37', // --accent-gold on hover
                   },
                 }}
               >
