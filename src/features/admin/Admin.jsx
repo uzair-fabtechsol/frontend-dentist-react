@@ -878,7 +878,7 @@ const Admin = () => {
                   <p style={{ margin: '0.5rem 0', color: 'var(--silver-dark)' }}>Week 3 - No activity in 3 days</p>
                   <span className="badge badge-danger">Needs Attention</span>
                 </div>
-                <div>
+                <div className='flex gap-2'>
                   <button className="btn btn-primary btn-sm">Send Message</button>
                   <button className="btn btn-secondary btn-sm">Schedule Call</button>
                 </div>
@@ -897,7 +897,7 @@ const Admin = () => {
                   <p style={{ margin: '0.5rem 0', color: 'var(--silver-dark)' }}>Week 5 - Behind schedule</p>
                   <span className="badge badge-warning">At Risk</span>
                 </div>
-                <div>
+                <div className='flex gap-2'>
                   <button className="btn btn-primary btn-sm">Send Message</button>
                   <button className="btn btn-secondary btn-sm">Schedule Call</button>
                 </div>
