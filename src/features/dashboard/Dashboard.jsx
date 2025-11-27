@@ -1,275 +1,171 @@
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import Avatar from '@mui/material/Avatar'
-import AvatarGroup from '@mui/material/AvatarGroup'
-import Chip from '@mui/material/Chip'
-import { 
-  Activity, 
-  PieChart, 
-  BarChart3, 
-  Target,
-  TrendingUp,
-  Calendar,
-  Clock,
-  DollarSign
-} from 'lucide-react'
-import Button from '../../components/Button'
-
-const recentActivity = [
-  { action: 'Appointment completed', patient: 'Sarah J.', time: '10 min ago', type: 'success' },
-  { action: 'New patient registered', patient: 'John D.', time: '25 min ago', type: 'info' },
-  { action: 'Payment received', patient: 'Emily R.', time: '1 hour ago', type: 'success' },
-  { action: 'Appointment rescheduled', patient: 'Mike W.', time: '2 hours ago', type: 'warning' },
-]
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
   return (
-    <Box className="space-y-6">
-      {/* Page Header */}
-      <Box className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-        <Box>
-          <Typography variant="h4" fontWeight={700} color="primary.main">
-            Dashboard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Your practice performance at a glance
-          </Typography>
-        </Box>
-        <Box className="flex gap-2">
-          <Button variant="outlined" startIcon={<Calendar className="w-4 h-4" />}>
-            This Week
-          </Button>
-          <Button variant="contained" color="secondary" startIcon={<Activity className="w-4 h-4" />}>
-            Generate Report
-          </Button>
-        </Box>
-      </Box>
+    <div className="container">
+      <div className="card fade-in">
+        <h1 className="card-title">Welcome Back, Doctor! 👋</h1>
+        <p className="card-subtitle">Ready to build your wealth and slash your taxes?</p>
+      </div>
 
-      {/* Charts Row */}
-      <Grid container spacing={3}>
-        {/* Revenue Chart */}
-        <Grid item xs={12} lg={8}>
-          <Card className="h-full">
-            <CardContent>
-              <Box className="flex items-center justify-between mb-4">
-                <Box>
-                  <Typography variant="h6" fontWeight={600} color="primary.main">
-                    Revenue Overview
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Monthly revenue performance
-                  </Typography>
-                </Box>
-                <Box className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5" style={{ color: '#28a745' }} />
-                  <Typography variant="body2" color="success.main" fontWeight={600}>
-                    +15.3% vs last month
-                  </Typography>
-                </Box>
-              </Box>
-              
-              {/* Chart Placeholder */}
-              <Box 
-                className="rounded-xl flex items-center justify-center"
-                sx={{ 
-                  bgcolor: 'grey.50', 
-                  height: '300px',
-                  border: '2px dashed',
-                  borderColor: 'grey.300',
-                }}
-              >
-                <Box className="text-center">
-                  <BarChart3 className="w-12 h-12 mx-auto mb-2" style={{ color: '#c0c5ce' }} />
-                  <Typography variant="body2" color="text.secondary">
-                    Revenue chart visualization
-                  </Typography>
-                </Box>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
+      {/* Progress Overview */}
+      <div className="grid grid-2 fade-in">
+        <div className="card">
+          <h3>Your Learning Progress</h3>
+          <div className="progress-container mt-3">
+            <div className="progress-label">
+              <span>Curriculum Completion</span>
+              <span>15%</span>
+            </div>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{ width: '15%' }}>15%</div>
+            </div>
+          </div>
+          <div className="mt-3">
+            <p><strong>1 of 8</strong> courses completed</p>
+            <p><strong>1 of 8</strong> quizzes passed (70% required)</p>
+            <p><strong>2 of 8</strong> strategies in progress</p>
+          </div>
+          <p className="mt-3" style={{ fontSize: '0.9rem', color: '#666' }}>
+            <em>📊 Your courses are generated from your personalized tax plan</em>
+          </p>
+        </div>
 
-        {/* Treatment Distribution */}
-        <Grid item xs={12} lg={4}>
-          <Card className="h-full">
-            <CardContent>
-              <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
-                Treatment Distribution
-              </Typography>
-              
-              {/* Pie Chart Placeholder */}
-              <Box 
-                className="rounded-xl flex items-center justify-center mb-4"
-                sx={{ 
-                  bgcolor: 'grey.50', 
-                  height: '180px',
-                  border: '2px dashed',
-                  borderColor: 'grey.300',
-                }}
-              >
-                <Box className="text-center">
-                  <PieChart className="w-10 h-10 mx-auto mb-2" style={{ color: '#c0c5ce' }} />
-                  <Typography variant="caption" color="text.secondary">
-                    Pie chart
-                  </Typography>
-                </Box>
-              </Box>
+        <div className="card">
+          <h3>Your Tax Savings Impact</h3>
+          <div style={{ fontSize: '2.5rem', color: 'var(--accent-gold)', fontWeight: 'bold', textAlign: 'center', margin: '2rem 0' }}>
+            $67,450
+          </div>
+          <p className="text-center"><strong>Projected Year 1 Savings</strong></p>
+          <p className="text-center" style={{ color: 'var(--silver-dark)', fontSize: '0.9rem' }}>Based on strategies in your tax plan</p>
+          <div className="mt-3" style={{ padding: '1rem', background: 'var(--silver-light)', borderRadius: '8px', textAlign: 'center' }}>
+            <p style={{ margin: 0 }}><strong>Implementation Status:</strong></p>
+            <p style={{ margin: '0.5rem 0 0 0', fontSize: '0.9rem' }}>2 strategies active • 6 pending completion</p>
+          </div>
+        </div>
+      </div>
 
-              {/* Legend */}
-              <Box className="space-y-2">
-                {[
-                  { label: 'Cleanings', value: '35%', color: '#1a2332' },
-                  { label: 'Fillings', value: '25%', color: '#28a745' },
-                  { label: 'Root Canals', value: '20%', color: '#d4af37' },
-                  { label: 'Other', value: '20%', color: '#4a90e2' },
-                ].map((item) => (
-                  <Box key={item.label} className="flex items-center justify-between">
-                    <Box className="flex items-center gap-2">
-                      <Box 
-                        className="w-3 h-3 rounded-full" 
-                        sx={{ bgcolor: item.color }} 
-                      />
-                      <Typography variant="body2">{item.label}</Typography>
-                    </Box>
-                    <Typography variant="body2" fontWeight={600}>{item.value}</Typography>
-                  </Box>
-                ))}
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
+      {/* Current Focus */}
+      <div className="card mt-4 fade-in">
+        <div className="card-header">
+          <h2 className="card-title">📚 Continue Learning: Entity Structuring & S-Corp Benefits</h2>
+          <p className="card-subtitle">Optimize your business structure to maximize tax savings</p>
+        </div>
 
-      {/* Bottom Row */}
-      <Grid container spacing={3}>
-        {/* Recent Activity */}
-        <Grid item xs={12} md={6}>
-          <Card className="h-full">
-            <CardContent>
-              <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
-                Recent Activity
-              </Typography>
-              
-              <Box className="space-y-3">
-                {recentActivity.map((item, index) => (
-                  <Box 
-                    key={index}
-                    className="flex items-center gap-3 p-3 rounded-lg"
-                    sx={{ bgcolor: 'grey.50', border: '1px solid', borderColor: 'grey.200' }}
-                  >
-                    <Box 
-                      className="w-2 h-2 rounded-full"
-                      sx={{ 
-                        bgcolor: item.type === 'success' ? '#28a745' : 
-                                 item.type === 'warning' ? '#d4af37' : '#4a90e2'
-                      }}
-                    />
-                    <Box className="flex-1">
-                      <Typography variant="body2" fontWeight={500}>
-                        {item.action}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {item.patient}
-                      </Typography>
-                    </Box>
-                    <Typography variant="caption" color="text.secondary">
-                      {item.time}
-                    </Typography>
-                  </Box>
-                ))}
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
+        <div className="alert alert-info">
+          <strong>🎯 Learning Goal:</strong> Master business entity structures and understand how S-Corp election can save you $15K-$40K annually in self-employment taxes.
+        </div>
 
-        {/* Goals */}
-        <Grid item xs={12} md={6}>
-          <Card className="h-full">
-            <CardContent>
-              <Box className="flex items-center justify-between mb-4">
-                <Typography variant="h6" fontWeight={600} color="primary.main">
-                  Monthly Goals
-                </Typography>
-                <Chip 
-                  label="On Track" 
-                  size="small" 
-                  sx={{ 
-                    fontWeight: 600,
-                    bgcolor: '#28a74515',
-                    color: '#28a745',
-                  }}
-                />
-              </Box>
-              
-              <Box className="space-y-4">
-                {[
-                  { label: 'Patient Visits', current: 156, target: 200, icon: Target },
-                  { label: 'Revenue Target', current: 48250, target: 60000, icon: DollarSign, format: '$' },
-                  { label: 'Avg Wait Time', current: 12, target: 10, icon: Clock, unit: 'min', inverse: true },
-                ].map((goal) => {
-                  const Icon = goal.icon
-                  const progress = goal.inverse 
-                    ? Math.max(0, 100 - ((goal.current - goal.target) / goal.target * 100))
-                    : (goal.current / goal.target) * 100
-                  
-                  return (
-                    <Box key={goal.label}>
-                      <Box className="flex items-center justify-between mb-1">
-                        <Box className="flex items-center gap-2">
-                          <Icon className="w-4 h-4" style={{ color: '#8b95a5' }} />
-                          <Typography variant="body2">{goal.label}</Typography>
-                        </Box>
-                        <Typography variant="body2" fontWeight={600}>
-                          {goal.format}{goal.current.toLocaleString()}{goal.unit} / {goal.format}{goal.target.toLocaleString()}{goal.unit}
-                        </Typography>
-                      </Box>
-                      <Box 
-                        className="h-2 rounded-full overflow-hidden"
-                        sx={{ bgcolor: 'grey.200' }}
-                      >
-                        <Box 
-                          className="h-full rounded-full"
-                          sx={{ 
-                            width: `${Math.min(progress, 100)}%`,
-                            bgcolor: progress >= 80 ? '#28a745' : progress >= 50 ? '#d4af37' : '#dc3545',
-                          }}
-                        />
-                      </Box>
-                    </Box>
-                  )
-                })}
-              </Box>
+        <div className="grid grid-2 mt-3">
+          <div className="card">
+            <h4>✅ Completed</h4>
+            <ul className="list-styled">
+              <li>Welcome & orientation</li>
+              <li>Platform overview</li>
+              <li>Goal setting exercise</li>
+              <li>Tax plan creation</li>
+            </ul>
+          </div>
 
-              {/* Team */}
-              <Box className="mt-6 pt-4" sx={{ borderTop: '1px solid', borderColor: 'grey.200' }}>
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  Team Members Online
-                </Typography>
-                <AvatarGroup max={5}>
-                  {['Dr. Smith', 'Dr. Jones', 'Lisa M.', 'Tom R.', 'Amy K.'].map((name) => (
-                    <Avatar 
-                      key={name} 
-                      sx={{ 
-                        width: 36, 
-                        height: 36, 
-                        bgcolor: '#1a2332',
-                        fontSize: '0.875rem',
-                        border: '2px solid #d4af37',
-                      }}
-                    >
-                      {name.split(' ').map(n => n[0]).join('')}
-                    </Avatar>
-                  ))}
-                </AvatarGroup>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    </Box>
+          <div className="card">
+            <h4>⏳ Up Next</h4>
+            <ul style={{ marginLeft: '1.5rem' }}>
+              <li style={{ padding: '0.5rem 0' }}>Complete Entity Structuring lesson</li>
+              <li style={{ padding: '0.5rem 0' }}>Review case study examples</li>
+              <li style={{ padding: '0.5rem 0' }}>Pass knowledge quiz (70% required)</li>
+              <li style={{ padding: '0.5rem 0' }}>Download implementation checklist</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="btn-group btn-group-center mt-4">
+          <Link to="/curriculum" className="btn btn-primary btn-lg">Start Entity Structuring Lesson →</Link>
+        </div>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="grid grid-2 mt-4 fade-in">
+        <div className="card text-center">
+          <div className="role-icon" style={{ width: '60px', height: '60px', fontSize: '1.5rem' }}>📹</div>
+          <h3 className="mt-2">Video Library</h3>
+          <p>Access all lessons</p>
+          <Link to="/curriculum" className="btn btn-secondary mt-2">View All</Link>
+        </div>
+
+        <div className="card text-center">
+          <div className="role-icon" style={{ width: '60px', height: '60px', fontSize: '1.5rem' }}>💬</div>
+          <h3 className="mt-2">Ask Vicky</h3>
+          <p>Get instant answers</p>
+          <Link to="/chat" className="btn btn-gold mt-2">Start Chat</Link>
+        </div>
+      </div>
+
+      {/* Upcoming Sessions */}
+      <div className="card mt-4 fade-in">
+        <h2 className="card-title">📅 Upcoming Live Sessions & Consultations</h2>
+        <div className="mt-3">
+          <div className="card" style={{ background: 'var(--silver-light)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <h4>Monthly "Architect's Q&A" with Norman Dotch</h4>
+                <p style={{ marginTop: '0.5rem' }}>First Thursday of Month • 7:00 PM EST</p>
+                <p style={{ color: 'var(--silver-dark)' }}>Live session covering advanced strategies and student questions</p>
+              </div>
+              <a href="#" className="btn btn-primary">Add to Calendar</a>
+            </div>
+          </div>
+
+          <div className="card mt-2" style={{ background: 'linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-blue) 100%)', color: 'white' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <h4>Your Quarterly Consultation</h4>
+                <p style={{ marginTop: '0.5rem' }}>Next session: Q1 2025 Review</p>
+                <p style={{ opacity: 0.9 }}>Direct consultation to review your tax plan and implementation progress</p>
+              </div>
+              <a href="#" className="btn" style={{ background: 'white', color: 'var(--navy-primary)' }}>Schedule Now</a>
+            </div>
+          </div>
+
+          <div className="card mt-2" style={{ background: 'var(--silver-light)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <h4>Student Success Stories</h4>
+                <p style={{ marginTop: '0.5rem' }}>Next Tuesday, 8:00 PM EST</p>
+                <p style={{ color: 'var(--silver-dark)' }}>Hear from graduates who saved $100K+ in taxes</p>
+              </div>
+              <a href="#" className="btn btn-secondary">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Your Goals Reminder */}
+      <div className="card mt-4 fade-in">
+        <h2 className="card-title">🎯 Your Goals Reminder</h2>
+        <div className="grid grid-2 mt-3">
+          <div>
+            <h4>Tax Savings Goal</h4>
+            <p className="mt-2" style={{ fontSize: '1.5rem', color: 'var(--accent-gold)', fontWeight: 'bold' }}>$50K - $100K/year</p>
+          </div>
+          <div>
+            <h4>10-Year Net Worth Target</h4>
+            <p className="mt-2" style={{ fontSize: '1.5rem', color: 'var(--accent-gold)', fontWeight: 'bold' }}>$5M - $10M</p>
+          </div>
+        </div>
+        <Link to="/onboarding" className="btn btn-secondary mt-3">Update Goals</Link>
+      </div>
+
+      {/* Motivational Message from Vicky */}
+      <div className="card mt-4 fade-in" style={{ background: 'linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-gold) 100%)', color: 'white' }}>
+        <h3>💡 Message from Vicky</h3>
+        <p style={{ fontSize: '1.1rem', marginTop: '1rem' }}>
+          "Great job completing onboarding! You're already ahead of 90% of dentists who never take action on their taxes. This week's R.O.B.S. strategy could save you tens of thousands if you're buying or expanding a practice. Let's dive in! 🚀"
+        </p>
+        <p style={{ marginTop: '1rem' }}>
+          <em>- Vicky, Your AI Learning Companion</em>
+        </p>
+      </div>
+    </div>
   )
 }
 
