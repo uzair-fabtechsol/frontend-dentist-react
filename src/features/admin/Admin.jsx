@@ -265,14 +265,14 @@ const Admin = () => {
                 <h4>Pending Certifications (12)</h4>
                 <div className="student-detail-card mt-2">
                   <strong>Dr. Sarah Chen</strong> - Week 12 Complete
-                  <div className="mt-2">
+                  <div className="mt-2 flex gap-2">
                     <button className="btn btn-primary btn-sm">Review & Approve</button>
                     <button className="btn btn-secondary btn-sm">View Details</button>
                   </div>
                 </div>
                 <div className="student-detail-card">
                   <strong>Dr. Emily Rodriguez</strong> - Week 12 Complete
-                  <div className="mt-2">
+                  <div className="mt-2 flex gap-2">
                     <button className="btn btn-primary btn-sm">Review & Approve</button>
                     <button className="btn btn-secondary btn-sm">View Details</button>
                   </div>
@@ -342,34 +342,34 @@ const Admin = () => {
                 <tbody>
                   <tr>
                     <td><strong>Entity Structuring & S-Corp Benefits</strong></td>
-                    <td><span className="badge badge-success">Active</span></td>
+                    <td><span className="badge badge-success rounded-full">Active</span></td>
                     <td>247</td>
                     <td>94%</td>
                     <td>Jan 10, 2025</td>
-                    <td>
+                    <td className="flex gap-2">
                       <button className="btn btn-primary btn-sm">Edit</button>
                       <button className="btn btn-secondary btn-sm">Stats</button>
                     </td>
                   </tr>
                   <tr>
                     <td><strong>IRC §7702 - Private Banking Strategy</strong></td>
-                    <td><span className="badge badge-success">Active</span></td>
+                    <td><span className="badge badge-success rounded-full">Active</span></td>
                     <td>178</td>
                     <td>87%</td>
                     <td>Jan 12, 2025</td>
-                    <td>
+                    <td className="flex gap-2">
                       <button className="btn btn-primary btn-sm">Edit</button>
                       <button className="btn btn-secondary btn-sm">Stats</button>
                     </td>
                   </tr>
                   <tr>
                     <td><strong>Estate Planning & Wealth Transfer</strong></td>
-                    <td><span className="badge badge-success">Active</span></td>
+                    <td><span className="badge badge-success ">Active</span></td>
                     <td>89</td>
                     <td>91%</td>
                     <td>Jan 15, 2025</td>
-                    <td>
-                      <button className="btn btn-primary btn-sm">Edit</button>
+                    <td className="flex gap-2">
+                      <button className="btn btn-primary btn-sm ">Edit</button>
                       <button className="btn btn-secondary btn-sm">Stats</button>
                     </td>
                   </tr>
@@ -473,7 +473,7 @@ const Admin = () => {
             {/* Courses Tab */}
             {activeCurriculumTab === 'courses' && (
               <div className="mt-3">
-                <div className="mt-3">
+                <div className="mt-3 flex gap-2">
                   <button className="btn btn-primary" onClick={() => setShowAddCourseModal(true)}>+ Add New Course</button>
                   <button className="btn btn-secondary">Import Courses</button>
                   <button className="btn btn-secondary">Bulk Edit</button>
@@ -497,7 +497,7 @@ const Admin = () => {
                         <td><span className="badge badge-success">Video Uploaded</span></td>
                         <td>147</td>
                         <td>78%</td>
-                        <td>
+                         <td className="flex gap-2">
                           <button className="btn btn-sm btn-primary">Edit</button>
                           <button className="btn btn-sm btn-secondary">Preview</button>
                         </td>
@@ -508,7 +508,7 @@ const Admin = () => {
                         <td><span className="badge badge-warning">Pending</span></td>
                         <td>32</td>
                         <td>45%</td>
-                        <td>
+                         <td className="flex gap-2">
                           <button className="btn btn-sm btn-primary">Edit</button>
                           <button className="btn btn-sm btn-secondary">Preview</button>
                         </td>
@@ -519,7 +519,7 @@ const Admin = () => {
                         <td><span className="badge badge-success">Video Uploaded</span></td>
                         <td>89</td>
                         <td>82%</td>
-                        <td>
+                         <td className="flex gap-2">
                           <button className="btn btn-sm btn-primary">Edit</button>
                           <button className="btn btn-sm btn-secondary">Preview</button>
                         </td>
@@ -530,7 +530,7 @@ const Admin = () => {
                         <td><span className="badge badge-warning">Pending</span></td>
                         <td>15</td>
                         <td>23%</td>
-                        <td>
+                        <td className="flex gap-2">
                           <button className="btn btn-sm btn-primary">Edit</button>
                           <button className="btn btn-sm btn-secondary">Preview</button>
                         </td>
@@ -613,7 +613,7 @@ const Admin = () => {
             {/* Weekly Content Tab */}
             {activeCurriculumTab === 'weekly' && (
               <div className="mt-3">
-                <div className="mt-3">
+                <div className="mt-3 flex gap-2">
                   <button className="btn btn-primary">+ Add Weekly Content</button>
                   <button className="btn btn-secondary">Schedule Release</button>
                   <button className="btn btn-secondary">Clone Week</button>
@@ -626,6 +626,9 @@ const Admin = () => {
                     </div>
                     <p className="mt-2"><strong>R.O.B.S. Strategy</strong></p>
                     <p style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>Removed for compliance</p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm btn-secondary">View Archive</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'var(--silver-light)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -638,6 +641,10 @@ const Admin = () => {
                       📝 Quiz: 10 questions<br />
                       📄 Resources: 3 PDFs
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm btn-primary">Edit Week</button>
+                      <button className="btn btn-sm btn-secondary">Preview</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'var(--silver-light)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -650,6 +657,10 @@ const Admin = () => {
                       📝 Quiz: Not created<br />
                       📄 Resources: 1 PDF
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm btn-primary">Edit Week</button>
+                      <button className="btn btn-sm btn-secondary">Add Content</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'var(--silver-light)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -662,6 +673,10 @@ const Admin = () => {
                       📝 Quiz: Not created<br />
                       📄 Resources: 0 files
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm btn-primary">Edit Week</button>
+                      <button className="btn btn-sm btn-secondary">Add Content</button>
+                    </div>
                   </div>
                 </div>
                 <div className="text-center mt-3">
@@ -673,7 +688,7 @@ const Admin = () => {
             {/* Pillars Tab */}
             {activeCurriculumTab === 'pillars' && (
               <div className="mt-3">
-                <div className="mt-3">
+                <div className="mt-3 flex gap-2">
                   <button className="btn btn-primary">+ Add New Pillar</button>
                   <button className="btn btn-secondary">Reorder Pillars</button>
                 </div>
