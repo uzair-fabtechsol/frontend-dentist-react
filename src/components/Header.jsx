@@ -8,7 +8,7 @@ import {
   Bell, 
   Search, 
   Settings,
-  Sparkles 
+  Crown 
 } from 'lucide-react'
 
 const Header = () => {
@@ -19,7 +19,8 @@ const Header = () => {
       sx={{
         px: { xs: 2, md: 4 },
         py: 2,
-        borderBottom: '1px solid rgba(23, 133, 247, 0.1)',
+        borderBottom: '1px solid',
+        borderColor: 'grey.200',
       }}
     >
       <Box className="flex items-center justify-between max-w-[1400px] mx-auto">
@@ -28,8 +29,8 @@ const Header = () => {
           <Box 
             className="p-2 rounded-xl"
             sx={{ 
-              background: 'linear-gradient(135deg, #1785f7 0%, #106de3 100%)',
-              boxShadow: '0 4px 15px rgba(23, 133, 247, 0.3)',
+              background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)',
+              boxShadow: '0 4px 15px rgba(26, 35, 50, 0.3)',
             }}
           >
             <Stethoscope className="w-6 h-6 text-white" />
@@ -37,15 +38,15 @@ const Header = () => {
           <Box>
             <Typography 
               variant="h6" 
-              className="font-bold gradient-text"
-              sx={{ lineHeight: 1.2 }}
+              className="font-bold"
+              sx={{ lineHeight: 1.2, color: 'primary.main' }}
             >
               DentaCare Pro
             </Typography>
             <Box className="flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-amber-500" />
+              <Crown className="w-3 h-3" style={{ color: '#d4af37' }} />
               <Typography variant="caption" color="text.secondary">
-                Smart Dental Assistant
+                Premium Dental Assistant
               </Typography>
             </Box>
           </Box>
@@ -55,12 +56,13 @@ const Header = () => {
         <Box 
           className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full"
           sx={{ 
-            bgcolor: 'rgba(23, 133, 247, 0.05)',
-            border: '1px solid rgba(23, 133, 247, 0.1)',
+            bgcolor: 'grey.100',
+            border: '1px solid',
+            borderColor: 'grey.200',
             minWidth: '300px',
           }}
         >
-          <Search className="w-4 h-4 text-gray-400" />
+          <Search className="w-4 h-4" style={{ color: '#8b95a5' }} />
           <Typography variant="body2" color="text.secondary">
             Search patients, appointments...
           </Typography>
@@ -71,23 +73,23 @@ const Header = () => {
           <IconButton 
             className="hover-lift"
             sx={{ 
-              bgcolor: 'rgba(23, 133, 247, 0.05)',
-              '&:hover': { bgcolor: 'rgba(23, 133, 247, 0.1)' }
+              bgcolor: 'grey.100',
+              '&:hover': { bgcolor: 'grey.200' }
             }}
           >
             <Badge badgeContent={3} color="error" max={9}>
-              <Bell className="w-5 h-5 text-primary-700" />
+              <Bell className="w-5 h-5" style={{ color: '#2d3e50' }} />
             </Badge>
           </IconButton>
           
           <IconButton 
             className="hover-lift hidden sm:flex"
             sx={{ 
-              bgcolor: 'rgba(23, 133, 247, 0.05)',
-              '&:hover': { bgcolor: 'rgba(23, 133, 247, 0.1)' }
+              bgcolor: 'grey.100',
+              '&:hover': { bgcolor: 'grey.200' }
             }}
           >
-            <Settings className="w-5 h-5 text-primary-700" />
+            <Settings className="w-5 h-5" style={{ color: '#2d3e50' }} />
           </IconButton>
 
           <Avatar 
@@ -97,7 +99,7 @@ const Header = () => {
               height: 40,
               bgcolor: 'primary.main',
               border: '2px solid',
-              borderColor: 'primary.light',
+              borderColor: 'secondary.main',
               cursor: 'pointer',
               transition: 'transform 0.2s',
               '&:hover': { transform: 'scale(1.05)' }
@@ -112,4 +114,3 @@ const Header = () => {
 }
 
 export default Header
-

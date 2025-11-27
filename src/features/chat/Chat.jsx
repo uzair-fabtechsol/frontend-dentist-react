@@ -54,18 +54,19 @@ const Chat = () => {
           <Box 
             className="p-3 rounded-xl"
             sx={{ 
-              background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
-              boxShadow: '0 8px 24px rgba(139, 92, 246, 0.3)',
+              background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)',
+              boxShadow: '0 8px 24px rgba(26, 35, 50, 0.3)',
+              border: '2px solid #d4af37',
             }}
           >
             <Bot className="w-6 h-6 text-white" />
           </Box>
           <Box>
-            <Typography variant="h5" fontWeight={700}>
+            <Typography variant="h5" fontWeight={700} color="primary.main">
               Chat with Vicky
             </Typography>
             <Box className="flex items-center gap-2">
-              <Box className="w-2 h-2 rounded-full bg-green-500" />
+              <Box className="w-2 h-2 rounded-full" style={{ backgroundColor: '#28a745' }} />
               <Typography variant="caption" color="text.secondary">
                 AI Dental Assistant • Online
               </Typography>
@@ -73,12 +74,12 @@ const Chat = () => {
           </Box>
         </Box>
         <Chip 
-          icon={<Sparkles className="w-4 h-4" />}
+          icon={<Sparkles className="w-4 h-4" style={{ color: '#d4af37' }} />}
           label="Powered by AI"
           size="small"
           sx={{ 
-            bgcolor: 'rgba(139, 92, 246, 0.1)',
-            color: '#8b5cf6',
+            bgcolor: '#d4af3715',
+            color: '#d4af37',
             fontWeight: 600,
           }}
         />
@@ -97,7 +98,7 @@ const Chat = () => {
               clickable
               sx={{ 
                 borderColor: 'grey.300',
-                '&:hover': { borderColor: 'primary.main', bgcolor: 'primary.50' }
+                '&:hover': { borderColor: '#1a2332', bgcolor: '#1a233208' }
               }}
             />
           )
@@ -117,7 +118,8 @@ const Chat = () => {
                   sx={{ 
                     width: 36, 
                     height: 36,
-                    bgcolor: msg.role === 'user' ? 'primary.main' : '#8b5cf6',
+                    bgcolor: msg.role === 'user' ? '#1a2332' : '#2d3e50',
+                    border: msg.role === 'assistant' ? '2px solid #d4af37' : 'none',
                   }}
                 >
                   {msg.role === 'user' ? (
@@ -131,8 +133,10 @@ const Chat = () => {
                     msg.role === 'user' ? 'rounded-tr-sm' : 'rounded-tl-sm'
                   }`}
                   sx={{ 
-                    bgcolor: msg.role === 'user' ? 'primary.main' : 'grey.100',
+                    bgcolor: msg.role === 'user' ? '#1a2332' : 'grey.100',
                     color: msg.role === 'user' ? 'white' : 'text.primary',
+                    border: msg.role === 'assistant' ? '1px solid' : 'none',
+                    borderColor: 'grey.200',
                   }}
                 >
                   <Typography 
@@ -179,11 +183,12 @@ const Chat = () => {
                 }}
               />
               <IconButton 
-                color="primary"
                 sx={{ 
-                  bgcolor: 'primary.main',
-                  color: 'white',
-                  '&:hover': { bgcolor: 'primary.dark' },
+                  background: 'linear-gradient(135deg, #d4af37 0%, #b8952e 100%)',
+                  color: '#1a2332',
+                  '&:hover': { 
+                    background: 'linear-gradient(135deg, #e9c84a 0%, #d4af37 100%)',
+                  },
                   width: 44,
                   height: 44,
                 }}
@@ -202,4 +207,3 @@ const Chat = () => {
 }
 
 export default Chat
-

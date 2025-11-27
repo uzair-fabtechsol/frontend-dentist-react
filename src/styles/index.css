@@ -3,10 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --gradient-primary: linear-gradient(135deg, #1785f7 0%, #106de3 50%, #174b91 100%);
-  --gradient-accent: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  --shadow-soft: 0 4px 20px rgba(23, 133, 247, 0.15);
+  --navy-primary: #1a2332;
+  --navy-secondary: #2d3e50;
+  --silver-light: #e8eaed;
+  --silver-medium: #c0c5ce;
+  --silver-dark: #8b95a5;
+  --accent-gold: #d4af37;
+  --accent-blue: #4a90e2;
+  --white: #ffffff;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --text-dark: #2c3e50;
+  --text-light: #f8f9fa;
+  
+  --gradient-primary: linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #4a5568 100%);
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #b8952e 100%);
+  --gradient-accent: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  --shadow-soft: 0 4px 20px rgba(26, 35, 50, 0.15);
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.25);
 }
 
 * {
@@ -17,9 +33,9 @@
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef9ff 100%);
+  background: linear-gradient(180deg, #f8f9fa 0%, #e8eaed 100%);
   min-height: 100vh;
-  color: #122f58;
+  color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,28 +53,35 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--silver-light);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #1785f7, #106de3);
+  background: linear-gradient(180deg, var(--navy-secondary), var(--navy-primary));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #106de3, #174b91);
+  background: linear-gradient(180deg, var(--navy-primary), #0e131c);
 }
 
 /* Utility classes */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(200, 200, 200, 0.3);
 }
 
 .gradient-text {
   background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: var(--gradient-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -73,3 +96,11 @@ body {
   box-shadow: var(--shadow-soft);
 }
 
+/* Gold accent border */
+.gold-border {
+  border: 2px solid var(--accent-gold);
+}
+
+.gold-glow {
+  box-shadow: var(--shadow-gold);
+}

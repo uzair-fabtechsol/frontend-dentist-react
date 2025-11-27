@@ -16,7 +16,7 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: '#122f58',
+        bgcolor: '#1a2332',
         color: 'white',
         mt: 'auto',
       }}
@@ -32,9 +32,9 @@ const Footer = () => {
             <Box className="flex items-center gap-2 mb-4">
               <Box 
                 className="p-2 rounded-lg"
-                sx={{ bgcolor: 'rgba(255, 255, 255, 0.1)' }}
+                sx={{ bgcolor: 'rgba(212, 175, 55, 0.2)' }}
               >
-                <Stethoscope className="w-5 h-5" />
+                <Stethoscope className="w-5 h-5" style={{ color: '#d4af37' }} />
               </Box>
               <Typography variant="h6" fontWeight={700}>
                 DentaCare Pro
@@ -42,7 +42,7 @@ const Footer = () => {
             </Box>
             <Typography 
               variant="body2" 
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 3 }}
+              sx={{ color: '#c0c5ce', mb: 3 }}
             >
               Empowering dental professionals with intelligent tools for better patient care.
             </Typography>
@@ -52,11 +52,11 @@ const Footer = () => {
                   key={index}
                   size="small"
                   sx={{ 
-                    color: 'rgba(255, 255, 255, 0.7)',
+                    color: '#c0c5ce',
                     bgcolor: 'rgba(255, 255, 255, 0.05)',
                     '&:hover': { 
-                      bgcolor: 'primary.main',
-                      color: 'white' 
+                      bgcolor: '#d4af37',
+                      color: '#1a2332' 
                     }
                   }}
                 >
@@ -68,7 +68,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <Box>
-            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2 }}>
+            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2, color: '#d4af37' }}>
               Quick Links
             </Typography>
             {['Home', 'Dashboard', 'Curriculum', 'Chat with Vicky'].map((link) => (
@@ -78,9 +78,9 @@ const Footer = () => {
                 underline="none"
                 sx={{ 
                   display: 'block',
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: '#c0c5ce',
                   py: 0.5,
-                  '&:hover': { color: 'primary.light' }
+                  '&:hover': { color: '#d4af37' }
                 }}
               >
                 {link}
@@ -90,7 +90,7 @@ const Footer = () => {
 
           {/* Resources */}
           <Box>
-            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2 }}>
+            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2, color: '#d4af37' }}>
               Resources
             </Typography>
             {['Documentation', 'API Reference', 'Support', 'Community'].map((link) => (
@@ -100,9 +100,9 @@ const Footer = () => {
                 underline="none"
                 sx={{ 
                   display: 'block',
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: '#c0c5ce',
                   py: 0.5,
-                  '&:hover': { color: 'primary.light' }
+                  '&:hover': { color: '#d4af37' }
                 }}
               >
                 {link}
@@ -112,24 +112,24 @@ const Footer = () => {
 
           {/* Contact */}
           <Box>
-            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2 }}>
+            <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2, color: '#d4af37' }}>
               Contact Us
             </Typography>
             <Typography 
               variant="body2" 
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 1 }}
+              sx={{ color: '#c0c5ce', mb: 1 }}
             >
               support@dentacare.pro
             </Typography>
             <Typography 
               variant="body2" 
-              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 1 }}
+              sx={{ color: '#c0c5ce', mb: 1 }}
             >
               +1 (555) 123-4567
             </Typography>
             <Typography 
               variant="body2" 
-              sx={{ color: 'rgba(255, 255, 255, 0.7)' }}
+              sx={{ color: '#c0c5ce' }}
             >
               123 Medical Center Dr.<br />
               Suite 100, Healthcare City
@@ -141,9 +141,10 @@ const Footer = () => {
       {/* Bottom Bar */}
       <Box 
         sx={{ 
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          borderTop: '1px solid rgba(212, 175, 55, 0.2)',
           py: 3,
           px: 4,
+          bgcolor: '#141b27',
         }}
       >
         <Box 
@@ -151,11 +152,11 @@ const Footer = () => {
         >
           <Typography 
             variant="body2" 
-            sx={{ color: 'rgba(255, 255, 255, 0.5)' }}
+            sx={{ color: '#8b95a5' }}
             className="flex items-center gap-1"
           >
             © 2024 DentaCare Pro. Made with 
-            <Heart className="w-3 h-3 text-red-400 fill-red-400" /> 
+            <Heart className="w-3 h-3 fill-current" style={{ color: '#d4af37' }} /> 
             for dental professionals.
           </Typography>
           <Box className="flex gap-4">
@@ -166,8 +167,8 @@ const Footer = () => {
                 underline="none"
                 variant="body2"
                 sx={{ 
-                  color: 'rgba(255, 255, 255, 0.5)',
-                  '&:hover': { color: 'primary.light' }
+                  color: '#8b95a5',
+                  '&:hover': { color: '#d4af37' }
                 }}
               >
                 {link}
@@ -181,4 +182,3 @@ const Footer = () => {
 }
 
 export default Footer
-

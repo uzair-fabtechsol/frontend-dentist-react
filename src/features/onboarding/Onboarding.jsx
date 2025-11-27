@@ -32,7 +32,7 @@ const Onboarding = () => {
     <Box className="space-y-8">
       {/* Header */}
       <Box className="text-center mb-8">
-        <Typography variant="h4" fontWeight={700} gutterBottom>
+        <Typography variant="h4" fontWeight={700} color="primary.main" gutterBottom>
           Welcome to DentaCare Pro 🎉
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '600px', mx: 'auto' }}>
@@ -48,7 +48,7 @@ const Onboarding = () => {
               <Typography variant="body2" color="text.secondary">
                 Setup Progress
               </Typography>
-              <Typography variant="body2" fontWeight={600} color="primary.main">
+              <Typography variant="body2" fontWeight={600} sx={{ color: '#d4af37' }}>
                 40% Complete
               </Typography>
             </Box>
@@ -58,10 +58,10 @@ const Onboarding = () => {
               sx={{ 
                 height: 8, 
                 borderRadius: 4,
-                bgcolor: 'grey.100',
+                bgcolor: 'grey.200',
                 '& .MuiLinearProgress-bar': {
                   borderRadius: 4,
-                  background: 'linear-gradient(90deg, #1785f7, #22c55e)',
+                  background: 'linear-gradient(90deg, #1a2332, #d4af37)',
                 }
               }}
             />
@@ -77,8 +77,9 @@ const Onboarding = () => {
                       <Box 
                         className="w-10 h-10 rounded-full flex items-center justify-center"
                         sx={{
-                          bgcolor: index <= currentStep ? 'primary.main' : 'grey.200',
+                          bgcolor: index <= currentStep ? '#1a2332' : 'grey.200',
                           color: index <= currentStep ? 'white' : 'grey.500',
+                          border: index === currentStep ? '2px solid #d4af37' : 'none',
                         }}
                       >
                         <Icon className="w-5 h-5" />
@@ -107,13 +108,14 @@ const Onboarding = () => {
             <Box 
               className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4"
               sx={{ 
-                background: 'linear-gradient(135deg, #1785f7 0%, #106de3 100%)',
-                boxShadow: '0 8px 24px rgba(23, 133, 247, 0.3)',
+                background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)',
+                boxShadow: '0 8px 24px rgba(26, 35, 50, 0.3)',
+                border: '2px solid #d4af37',
               }}
             >
               <Building2 className="w-8 h-8 text-white" />
             </Box>
-            <Typography variant="h5" fontWeight={700} gutterBottom>
+            <Typography variant="h5" fontWeight={700} color="primary.main" gutterBottom>
               Practice Details
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -127,7 +129,7 @@ const Onboarding = () => {
             sx={{ 
               bgcolor: 'grey.50', 
               border: '2px dashed',
-              borderColor: 'grey.200',
+              borderColor: 'grey.300',
             }}
           >
             <Typography variant="body1" color="text.secondary">
@@ -148,6 +150,7 @@ const Onboarding = () => {
             </Button>
             <Button 
               variant="contained" 
+              color="secondary"
               endIcon={<ArrowRight className="w-4 h-4" />}
             >
               Continue
@@ -160,4 +163,3 @@ const Onboarding = () => {
 }
 
 export default Onboarding
-

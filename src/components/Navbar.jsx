@@ -36,7 +36,7 @@ const Navbar = () => {
       sx={{
         bgcolor: 'white',
         borderBottom: '1px solid',
-        borderColor: 'divider',
+        borderColor: 'grey.200',
         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
       }}
     >
@@ -59,8 +59,10 @@ const Navbar = () => {
                 sx={{
                   bgcolor: active ? 'primary.main' : 'transparent',
                   color: active ? 'white' : 'text.secondary',
+                  borderBottom: active ? '2px solid' : '2px solid transparent',
+                  borderColor: active ? 'secondary.main' : 'transparent',
                   '&:hover': {
-                    bgcolor: active ? 'primary.dark' : 'rgba(23, 133, 247, 0.08)',
+                    bgcolor: active ? 'primary.light' : 'grey.100',
                     color: active ? 'white' : 'primary.main',
                   },
                 }}
@@ -83,4 +85,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

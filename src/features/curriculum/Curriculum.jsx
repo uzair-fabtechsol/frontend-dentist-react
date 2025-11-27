@@ -62,7 +62,7 @@ const Curriculum = () => {
       {/* Page Header */}
       <Box className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <Box>
-          <Typography variant="h4" fontWeight={700}>
+          <Typography variant="h4" fontWeight={700} color="primary.main">
             Learning Curriculum
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -71,7 +71,7 @@ const Curriculum = () => {
         </Box>
         <Box className="flex items-center gap-3">
           <Box className="text-right">
-            <Typography variant="h5" fontWeight={700} color="primary.main">
+            <Typography variant="h5" fontWeight={700} sx={{ color: '#d4af37' }}>
               156
             </Typography>
             <Typography variant="caption" color="text.secondary">
@@ -81,7 +81,7 @@ const Curriculum = () => {
           <Box 
             className="p-3 rounded-xl"
             sx={{ 
-              background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+              background: 'linear-gradient(135deg, #d4af37 0%, #b8952e 100%)',
             }}
           >
             <Award className="w-6 h-6 text-white" />
@@ -92,10 +92,10 @@ const Curriculum = () => {
       {/* Stats */}
       <Grid container spacing={3}>
         {[
-          { label: 'Courses Completed', value: '8', icon: CheckCircle2, color: '#22c55e' },
-          { label: 'In Progress', value: '3', icon: Play, color: '#1785f7' },
-          { label: 'Total Hours', value: '42', icon: Clock, color: '#8b5cf6' },
-          { label: 'Certificates', value: '5', icon: Award, color: '#f59e0b' },
+          { label: 'Courses Completed', value: '8', icon: CheckCircle2, color: '#28a745' },
+          { label: 'In Progress', value: '3', icon: Play, color: '#1a2332' },
+          { label: 'Total Hours', value: '42', icon: Clock, color: '#4a90e2' },
+          { label: 'Certificates', value: '5', icon: Award, color: '#d4af37' },
         ].map((stat, index) => {
           const Icon = stat.icon
           return (
@@ -109,7 +109,7 @@ const Curriculum = () => {
                     <Icon className="w-5 h-5" style={{ color: stat.color }} />
                   </Box>
                   <Box>
-                    <Typography variant="h5" fontWeight={700}>
+                    <Typography variant="h5" fontWeight={700} color="primary.main">
                       {stat.value}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -124,7 +124,7 @@ const Curriculum = () => {
       </Grid>
 
       {/* Courses Grid */}
-      <Typography variant="h6" fontWeight={600} sx={{ mt: 4 }}>
+      <Typography variant="h6" fontWeight={600} color="primary.main" sx={{ mt: 4 }}>
         Your Courses
       </Typography>
       
@@ -138,8 +138,9 @@ const Curriculum = () => {
                     className="p-3 rounded-xl"
                     sx={{ 
                       background: course.status === 'locked' 
-                        ? 'linear-gradient(135deg, #94a3b8 0%, #64748b 100%)'
-                        : 'linear-gradient(135deg, #1785f7 0%, #106de3 100%)',
+                        ? 'linear-gradient(135deg, #8b95a5 0%, #6c757d 100%)'
+                        : 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)',
+                      border: course.status !== 'locked' ? '2px solid #d4af37' : 'none',
                     }}
                   >
                     {course.status === 'locked' ? (
@@ -154,15 +155,17 @@ const Curriculum = () => {
                       course.status === 'in_progress' ? 'In Progress' : 'Locked'
                     }
                     size="small"
-                    color={
-                      course.status === 'completed' ? 'success' :
-                      course.status === 'in_progress' ? 'primary' : 'default'
-                    }
-                    sx={{ fontWeight: 600 }}
+                    sx={{ 
+                      fontWeight: 600,
+                      bgcolor: course.status === 'completed' ? '#28a74515' :
+                               course.status === 'in_progress' ? '#1a233215' : 'grey.200',
+                      color: course.status === 'completed' ? '#28a745' :
+                             course.status === 'in_progress' ? '#1a2332' : 'grey.600',
+                    }}
                   />
                 </Box>
 
-                <Typography variant="h6" fontWeight={600} gutterBottom>
+                <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
                   {course.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -172,19 +175,19 @@ const Curriculum = () => {
                 {/* Meta */}
                 <Box className="flex items-center gap-4 mb-3">
                   <Box className="flex items-center gap-1">
-                    <Clock className="w-4 h-4 text-gray-400" />
+                    <Clock className="w-4 h-4" style={{ color: '#8b95a5' }} />
                     <Typography variant="caption" color="text.secondary">
                       {course.duration}
                     </Typography>
                   </Box>
                   <Box className="flex items-center gap-1">
-                    <Play className="w-4 h-4 text-gray-400" />
+                    <Play className="w-4 h-4" style={{ color: '#8b95a5' }} />
                     <Typography variant="caption" color="text.secondary">
                       {course.lessons} lessons
                     </Typography>
                   </Box>
                   <Box className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    <Star className="w-4 h-4" style={{ color: '#d4af37', fill: '#d4af37' }} />
                     <Typography variant="caption" color="text.secondary">
                       {course.rating}
                     </Typography>
@@ -208,7 +211,10 @@ const Curriculum = () => {
                       sx={{ 
                         height: 6, 
                         borderRadius: 3,
-                        bgcolor: 'grey.100',
+                        bgcolor: 'grey.200',
+                        '& .MuiLinearProgress-bar': {
+                          bgcolor: course.progress === 100 ? '#28a745' : '#1a2332',
+                        }
                       }}
                     />
                   </Box>
@@ -216,6 +222,7 @@ const Curriculum = () => {
 
                 <Button 
                   variant={course.status === 'locked' ? 'outlined' : 'contained'}
+                  color={course.status === 'locked' ? 'primary' : 'secondary'}
                   fullWidth
                   disabled={course.status === 'locked'}
                   endIcon={course.status !== 'locked' && <ArrowRight className="w-4 h-4" />}
@@ -233,4 +240,3 @@ const Curriculum = () => {
 }
 
 export default Curriculum
-

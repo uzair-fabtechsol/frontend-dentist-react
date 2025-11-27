@@ -31,7 +31,7 @@ const Dashboard = () => {
       {/* Page Header */}
       <Box className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <Box>
-          <Typography variant="h4" fontWeight={700}>
+          <Typography variant="h4" fontWeight={700} color="primary.main">
             Dashboard
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -42,7 +42,7 @@ const Dashboard = () => {
           <Button variant="outlined" startIcon={<Calendar className="w-4 h-4" />}>
             This Week
           </Button>
-          <Button variant="contained" startIcon={<Activity className="w-4 h-4" />}>
+          <Button variant="contained" color="secondary" startIcon={<Activity className="w-4 h-4" />}>
             Generate Report
           </Button>
         </Box>
@@ -56,7 +56,7 @@ const Dashboard = () => {
             <CardContent>
               <Box className="flex items-center justify-between mb-4">
                 <Box>
-                  <Typography variant="h6" fontWeight={600}>
+                  <Typography variant="h6" fontWeight={600} color="primary.main">
                     Revenue Overview
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -64,7 +64,7 @@ const Dashboard = () => {
                   </Typography>
                 </Box>
                 <Box className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-green-500" />
+                  <TrendingUp className="w-5 h-5" style={{ color: '#28a745' }} />
                   <Typography variant="body2" color="success.main" fontWeight={600}>
                     +15.3% vs last month
                   </Typography>
@@ -78,11 +78,11 @@ const Dashboard = () => {
                   bgcolor: 'grey.50', 
                   height: '300px',
                   border: '2px dashed',
-                  borderColor: 'grey.200',
+                  borderColor: 'grey.300',
                 }}
               >
                 <Box className="text-center">
-                  <BarChart3 className="w-12 h-12 text-gray-300 mx-auto mb-2" />
+                  <BarChart3 className="w-12 h-12 mx-auto mb-2" style={{ color: '#c0c5ce' }} />
                   <Typography variant="body2" color="text.secondary">
                     Revenue chart visualization
                   </Typography>
@@ -96,7 +96,7 @@ const Dashboard = () => {
         <Grid item xs={12} lg={4}>
           <Card className="h-full">
             <CardContent>
-              <Typography variant="h6" fontWeight={600} gutterBottom>
+              <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
                 Treatment Distribution
               </Typography>
               
@@ -107,11 +107,11 @@ const Dashboard = () => {
                   bgcolor: 'grey.50', 
                   height: '180px',
                   border: '2px dashed',
-                  borderColor: 'grey.200',
+                  borderColor: 'grey.300',
                 }}
               >
                 <Box className="text-center">
-                  <PieChart className="w-10 h-10 text-gray-300 mx-auto mb-2" />
+                  <PieChart className="w-10 h-10 mx-auto mb-2" style={{ color: '#c0c5ce' }} />
                   <Typography variant="caption" color="text.secondary">
                     Pie chart
                   </Typography>
@@ -121,10 +121,10 @@ const Dashboard = () => {
               {/* Legend */}
               <Box className="space-y-2">
                 {[
-                  { label: 'Cleanings', value: '35%', color: '#1785f7' },
-                  { label: 'Fillings', value: '25%', color: '#22c55e' },
-                  { label: 'Root Canals', value: '20%', color: '#f59e0b' },
-                  { label: 'Other', value: '20%', color: '#8b5cf6' },
+                  { label: 'Cleanings', value: '35%', color: '#1a2332' },
+                  { label: 'Fillings', value: '25%', color: '#28a745' },
+                  { label: 'Root Canals', value: '20%', color: '#d4af37' },
+                  { label: 'Other', value: '20%', color: '#4a90e2' },
                 ].map((item) => (
                   <Box key={item.label} className="flex items-center justify-between">
                     <Box className="flex items-center gap-2">
@@ -149,7 +149,7 @@ const Dashboard = () => {
         <Grid item xs={12} md={6}>
           <Card className="h-full">
             <CardContent>
-              <Typography variant="h6" fontWeight={600} gutterBottom>
+              <Typography variant="h6" fontWeight={600} color="primary.main" gutterBottom>
                 Recent Activity
               </Typography>
               
@@ -158,13 +158,13 @@ const Dashboard = () => {
                   <Box 
                     key={index}
                     className="flex items-center gap-3 p-3 rounded-lg"
-                    sx={{ bgcolor: 'grey.50' }}
+                    sx={{ bgcolor: 'grey.50', border: '1px solid', borderColor: 'grey.200' }}
                   >
                     <Box 
                       className="w-2 h-2 rounded-full"
                       sx={{ 
-                        bgcolor: item.type === 'success' ? 'success.main' : 
-                                 item.type === 'warning' ? 'warning.main' : 'info.main'
+                        bgcolor: item.type === 'success' ? '#28a745' : 
+                                 item.type === 'warning' ? '#d4af37' : '#4a90e2'
                       }}
                     />
                     <Box className="flex-1">
@@ -190,14 +190,17 @@ const Dashboard = () => {
           <Card className="h-full">
             <CardContent>
               <Box className="flex items-center justify-between mb-4">
-                <Typography variant="h6" fontWeight={600}>
+                <Typography variant="h6" fontWeight={600} color="primary.main">
                   Monthly Goals
                 </Typography>
                 <Chip 
                   label="On Track" 
                   size="small" 
-                  color="success"
-                  sx={{ fontWeight: 600 }}
+                  sx={{ 
+                    fontWeight: 600,
+                    bgcolor: '#28a74515',
+                    color: '#28a745',
+                  }}
                 />
               </Box>
               
@@ -216,7 +219,7 @@ const Dashboard = () => {
                     <Box key={goal.label}>
                       <Box className="flex items-center justify-between mb-1">
                         <Box className="flex items-center gap-2">
-                          <Icon className="w-4 h-4 text-gray-400" />
+                          <Icon className="w-4 h-4" style={{ color: '#8b95a5' }} />
                           <Typography variant="body2">{goal.label}</Typography>
                         </Box>
                         <Typography variant="body2" fontWeight={600}>
@@ -225,13 +228,13 @@ const Dashboard = () => {
                       </Box>
                       <Box 
                         className="h-2 rounded-full overflow-hidden"
-                        sx={{ bgcolor: 'grey.100' }}
+                        sx={{ bgcolor: 'grey.200' }}
                       >
                         <Box 
                           className="h-full rounded-full"
                           sx={{ 
                             width: `${Math.min(progress, 100)}%`,
-                            bgcolor: progress >= 80 ? 'success.main' : progress >= 50 ? 'warning.main' : 'error.main',
+                            bgcolor: progress >= 80 ? '#28a745' : progress >= 50 ? '#d4af37' : '#dc3545',
                           }}
                         />
                       </Box>
@@ -241,7 +244,7 @@ const Dashboard = () => {
               </Box>
 
               {/* Team */}
-              <Box className="mt-6 pt-4 border-t">
+              <Box className="mt-6 pt-4" sx={{ borderTop: '1px solid', borderColor: 'grey.200' }}>
                 <Typography variant="body2" color="text.secondary" gutterBottom>
                   Team Members Online
                 </Typography>
@@ -252,8 +255,9 @@ const Dashboard = () => {
                       sx={{ 
                         width: 36, 
                         height: 36, 
-                        bgcolor: 'primary.main',
+                        bgcolor: '#1a2332',
                         fontSize: '0.875rem',
+                        border: '2px solid #d4af37',
                       }}
                     >
                       {name.split(' ').map(n => n[0]).join('')}
@@ -270,4 +274,3 @@ const Dashboard = () => {
 }
 
 export default Dashboard
-

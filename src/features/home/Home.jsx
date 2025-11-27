@@ -20,28 +20,28 @@ const statsData = [
     value: '2,847', 
     change: '+12%', 
     icon: Users,
-    color: '#1785f7'
+    color: '#1a2332'
   },
   { 
     label: 'Appointments Today', 
     value: '18', 
     change: '+3', 
     icon: Calendar,
-    color: '#22c55e'
+    color: '#28a745'
   },
   { 
     label: 'Revenue This Month', 
     value: '$48,250', 
     change: '+8.2%', 
     icon: TrendingUp,
-    color: '#f59e0b'
+    color: '#d4af37'
   },
   { 
     label: 'Avg. Wait Time', 
     value: '12 min', 
     change: '-5%', 
     icon: Clock,
-    color: '#8b5cf6'
+    color: '#4a90e2'
   },
 ]
 
@@ -59,8 +59,9 @@ const Home = () => {
       <Box 
         className="rounded-2xl p-6 md:p-8"
         sx={{
-          background: 'linear-gradient(135deg, #1785f7 0%, #106de3 50%, #174b91 100%)',
+          background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #4a5568 100%)',
           color: 'white',
+          border: '1px solid rgba(212, 175, 55, 0.3)',
         }}
       >
         <Typography variant="h4" fontWeight={700} gutterBottom>
@@ -71,13 +72,9 @@ const Home = () => {
         </Typography>
         <Button 
           variant="contained" 
+          color="secondary"
           endIcon={<ArrowRight className="w-4 h-4" />}
-          sx={{ 
-            mt: 3, 
-            bgcolor: 'white', 
-            color: 'primary.main',
-            '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' }
-          }}
+          sx={{ mt: 3 }}
         >
           View Today's Schedule
         </Button>
@@ -95,7 +92,7 @@ const Home = () => {
                     <Typography variant="body2" color="text.secondary" gutterBottom>
                       {stat.label}
                     </Typography>
-                    <Typography variant="h4" fontWeight={700}>
+                    <Typography variant="h4" fontWeight={700} color="primary.main">
                       {stat.value}
                     </Typography>
                     <Typography 
@@ -125,7 +122,7 @@ const Home = () => {
       <Card>
         <CardContent>
           <Box className="flex items-center justify-between mb-4">
-            <Typography variant="h6" fontWeight={600}>
+            <Typography variant="h6" fontWeight={600} color="primary.main">
               Today's Appointments
             </Typography>
             <Button variant="text" size="small" endIcon={<ArrowRight className="w-4 h-4" />}>
@@ -138,19 +135,23 @@ const Home = () => {
               <Box 
                 key={index}
                 className="flex items-center justify-between p-4 rounded-xl"
-                sx={{ bgcolor: 'grey.50' }}
+                sx={{ bgcolor: 'grey.50', border: '1px solid', borderColor: 'grey.200' }}
               >
                 <Box className="flex items-center gap-4">
                   <Box 
                     className="px-3 py-2 rounded-lg text-center"
-                    sx={{ bgcolor: 'primary.main', color: 'white', minWidth: '80px' }}
+                    sx={{ 
+                      background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)', 
+                      color: 'white', 
+                      minWidth: '80px' 
+                    }}
                   >
                     <Typography variant="body2" fontWeight={600}>
                       {apt.time}
                     </Typography>
                   </Box>
                   <Box>
-                    <Typography variant="body1" fontWeight={600}>
+                    <Typography variant="body1" fontWeight={600} color="primary.main">
                       {apt.patient}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -160,14 +161,14 @@ const Home = () => {
                 </Box>
                 <Box className="flex items-center gap-2">
                   {apt.status === 'confirmed' ? (
-                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <CheckCircle2 className="w-5 h-5" style={{ color: '#28a745' }} />
                   ) : (
-                    <AlertCircle className="w-5 h-5 text-amber-500" />
+                    <AlertCircle className="w-5 h-5" style={{ color: '#d4af37' }} />
                   )}
                   <Typography 
                     variant="caption" 
                     sx={{ 
-                      color: apt.status === 'confirmed' ? 'success.main' : 'warning.main',
+                      color: apt.status === 'confirmed' ? 'success.main' : 'secondary.main',
                       fontWeight: 600,
                       textTransform: 'capitalize'
                     }}
@@ -185,4 +186,3 @@ const Home = () => {
 }
 
 export default Home
-

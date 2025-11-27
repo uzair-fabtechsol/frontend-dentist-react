@@ -48,14 +48,14 @@ const Admin = () => {
           <Box 
             className="p-3 rounded-xl"
             sx={{ 
-              background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
-              boxShadow: '0 8px 24px rgba(220, 38, 38, 0.3)',
+              background: 'linear-gradient(135deg, #dc3545 0%, #bd2130 100%)',
+              boxShadow: '0 8px 24px rgba(220, 53, 69, 0.3)',
             }}
           >
             <Shield className="w-6 h-6 text-white" />
           </Box>
           <Box>
-            <Typography variant="h4" fontWeight={700}>
+            <Typography variant="h4" fontWeight={700} color="primary.main">
               Admin Dashboard
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -66,7 +66,12 @@ const Admin = () => {
         <Button 
           variant="contained" 
           startIcon={<UserPlus className="w-4 h-4" />}
-          color="error"
+          sx={{
+            background: 'linear-gradient(135deg, #dc3545 0%, #bd2130 100%)',
+            '&:hover': {
+              background: 'linear-gradient(135deg, #e4606d 0%, #dc3545 100%)',
+            }
+          }}
         >
           Add New User
         </Button>
@@ -75,10 +80,10 @@ const Admin = () => {
       {/* System Stats */}
       <Grid container spacing={3}>
         {[
-          { label: 'Total Users', value: '24', icon: Users, color: '#1785f7', change: '+3 this week' },
-          { label: 'Active Sessions', value: '12', icon: Activity, color: '#22c55e', change: 'Real-time' },
-          { label: 'Storage Used', value: '68%', icon: Database, color: '#8b5cf6', change: '2.4 GB / 5 GB' },
-          { label: 'System Alerts', value: '2', icon: AlertTriangle, color: '#f59e0b', change: 'Action required' },
+          { label: 'Total Users', value: '24', icon: Users, color: '#1a2332', change: '+3 this week' },
+          { label: 'Active Sessions', value: '12', icon: Activity, color: '#28a745', change: 'Real-time' },
+          { label: 'Storage Used', value: '68%', icon: Database, color: '#4a90e2', change: '2.4 GB / 5 GB' },
+          { label: 'System Alerts', value: '2', icon: AlertTriangle, color: '#d4af37', change: 'Action required' },
         ].map((stat, index) => {
           const Icon = stat.icon
           return (
@@ -89,7 +94,7 @@ const Admin = () => {
                     <Typography variant="body2" color="text.secondary" gutterBottom>
                       {stat.label}
                     </Typography>
-                    <Typography variant="h4" fontWeight={700}>
+                    <Typography variant="h4" fontWeight={700} color="primary.main">
                       {stat.value}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -116,7 +121,7 @@ const Admin = () => {
           <Card>
             <CardContent>
               <Box className="flex items-center justify-between mb-4">
-                <Typography variant="h6" fontWeight={600}>
+                <Typography variant="h6" fontWeight={600} color="primary.main">
                   User Management
                 </Typography>
                 <Button variant="text" size="small">
@@ -140,7 +145,7 @@ const Admin = () => {
                       <TableRow key={index} hover>
                         <TableCell>
                           <Box className="flex items-center gap-3">
-                            <Avatar sx={{ bgcolor: 'primary.main' }}>
+                            <Avatar sx={{ bgcolor: '#1a2332', border: '2px solid #d4af37' }}>
                               {user.name.split(' ').map(n => n[0]).join('')}
                             </Avatar>
                             <Box>
@@ -157,21 +162,26 @@ const Admin = () => {
                           <Chip 
                             label={user.role}
                             size="small"
-                            color={user.role === 'Admin' ? 'error' : user.role === 'Doctor' ? 'primary' : 'default'}
-                            sx={{ fontWeight: 600 }}
+                            sx={{ 
+                              fontWeight: 600,
+                              bgcolor: user.role === 'Admin' ? '#dc354515' : 
+                                       user.role === 'Doctor' ? '#1a233215' : 'grey.200',
+                              color: user.role === 'Admin' ? '#dc3545' : 
+                                     user.role === 'Doctor' ? '#1a2332' : 'grey.600',
+                            }}
                           />
                         </TableCell>
                         <TableCell>
                           <Box className="flex items-center gap-1">
                             {user.status === 'active' ? (
-                              <CheckCircle className="w-4 h-4 text-green-500" />
+                              <CheckCircle className="w-4 h-4" style={{ color: '#28a745' }} />
                             ) : (
-                              <AlertTriangle className="w-4 h-4 text-amber-500" />
+                              <AlertTriangle className="w-4 h-4" style={{ color: '#d4af37' }} />
                             )}
                             <Typography 
                               variant="caption" 
                               sx={{ 
-                                color: user.status === 'active' ? 'success.main' : 'warning.main',
+                                color: user.status === 'active' ? '#28a745' : '#d4af37',
                                 textTransform: 'capitalize',
                               }}
                             >
@@ -203,8 +213,8 @@ const Admin = () => {
           <Card className="h-full">
             <CardContent>
               <Box className="flex items-center gap-2 mb-4">
-                <Settings className="w-5 h-5 text-gray-500" />
-                <Typography variant="h6" fontWeight={600}>
+                <Settings className="w-5 h-5" style={{ color: '#8b95a5' }} />
+                <Typography variant="h6" fontWeight={600} color="primary.main">
                   System Settings
                 </Typography>
               </Box>
@@ -214,7 +224,7 @@ const Admin = () => {
                   <Box 
                     key={index}
                     className="flex items-center justify-between p-3 rounded-lg"
-                    sx={{ bgcolor: 'grey.50' }}
+                    sx={{ bgcolor: 'grey.50', border: '1px solid', borderColor: 'grey.200' }}
                   >
                     <Box>
                       <Typography variant="body2" fontWeight={600}>
@@ -226,7 +236,14 @@ const Admin = () => {
                     </Box>
                     <Switch 
                       defaultChecked={setting.enabled}
-                      color="primary"
+                      sx={{
+                        '& .MuiSwitch-switchBase.Mui-checked': {
+                          color: '#d4af37',
+                        },
+                        '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                          backgroundColor: '#d4af37',
+                        },
+                      }}
                     />
                   </Box>
                 ))}
@@ -249,4 +266,3 @@ const Admin = () => {
 }
 
 export default Admin
-
