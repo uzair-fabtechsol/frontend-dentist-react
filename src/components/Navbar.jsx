@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <Box
       component="nav"
-      className="sticky top-[73px] z-40 overflow-x-auto"
+      className=" top-[72px] z-40 overflow-x-auto"
       sx={{
         bgcolor: '#2d3e50', // --navy-secondary
         borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
