@@ -544,6 +544,7 @@ const Admin = () => {
             {/* Videos Tab */}
             {activeCurriculumTab === 'videos' && (
               <div className="grid grid-2 mt-3">
+                {/* Upload Video Section */}
                 <div className="card" style={{ background: 'var(--silver-light)' }}>
                   <h3>📹 Upload New Video Lesson</h3>
                   <form className="mt-3">
@@ -555,6 +556,10 @@ const Admin = () => {
                         <option value="2">Asset Protection Strategies</option>
                         <option value="3">IRC §469 - Passive Loss Planning</option>
                         <option value="4">IRC §7702 - Private Banking Strategy</option>
+                        <option value="5">Augusta Rule (IRC §280A)</option>
+                        <option value="6">Defined Benefit & Cash Balance Plans</option>
+                        <option value="7">EXIT & SALE OF PRACTICE</option>
+                        <option value="8">Captive Insurance (IRC §831(b))</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -567,12 +572,26 @@ const Admin = () => {
                       </select>
                     </div>
                     <div className="form-group">
-                      <label className="form-label">Video URL</label>
+                      <label className="form-label">Video File</label>
+                      <input type="file" className="form-control" accept="video/*" />
+                      <small style={{ color: 'var(--silver-dark)' }}>Accepted formats: MP4, MOV, AVI (Max: 500MB)</small>
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Video URL (Alternative)</label>
                       <input type="url" className="form-control" placeholder="https://vimeo.com/... or YouTube link" />
+                      <small style={{ color: 'var(--silver-dark)' }}>Use Vimeo, YouTube, or direct video URL</small>
                     </div>
                     <div className="form-group">
                       <label className="form-label">Duration</label>
                       <input type="text" className="form-control" placeholder="e.g., 45 minutes" />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Thumbnail</label>
+                      <input type="file" className="form-control" accept="image/*" />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Description</label>
+                      <textarea className="form-control" rows="3" placeholder="Brief description of the video lesson"></textarea>
                     </div>
                     <div className="btn-group">
                       <button type="submit" className="btn btn-primary">Upload Video</button>
@@ -580,29 +599,54 @@ const Admin = () => {
                     </div>
                   </form>
                 </div>
+                {/* Video Library */}
                 <div className="card" style={{ background: 'var(--silver-light)' }}>
                   <h3>🎬 Video Library</h3>
                   <div className="mt-3">
                     <div className="student-detail-card">
-                      <strong>Entity Structuring - Main Lesson</strong>
-                      <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
-                        Duration: 42:15 • Uploaded: Jan 15, 2025<br />
-                        Views: 1,247 • Avg. Completion: 87%
-                      </p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                        <div>
+                          <strong>Entity Structuring - Main Lesson</strong>
+                          <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
+                            Duration: 42:15 • Uploaded: Jan 15, 2025<br />
+                            Views: 1,247 • Avg. Completion: 87%
+                          </p>
+                        </div>
+                        <div>
+                          <button className="btn btn-sm btn-primary">Edit</button>
+                          <button className="btn btn-sm btn-secondary">Preview</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="student-detail-card">
-                      <strong>IRC §469 - Passive Loss Planning</strong>
-                      <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
-                        Duration: 38:20 • Uploaded: Jan 12, 2025<br />
-                        Views: 892 • Avg. Completion: 92%
-                      </p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                        <div>
+                          <strong>IRC §469 - Passive Loss Planning</strong>
+                          <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
+                            Duration: 38:20 • Uploaded: Jan 12, 2025<br />
+                            Views: 892 • Avg. Completion: 92%
+                          </p>
+                        </div>
+                        <div>
+                          <button className="btn btn-sm btn-primary">Edit</button>
+                          <button className="btn btn-sm btn-secondary">Preview</button>
+                        </div>
+                      </div>
                     </div>
                     <div className="student-detail-card">
-                      <strong>Private Banking Strategy - Case Study</strong>
-                      <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
-                        Duration: 28:45 • Uploaded: Jan 10, 2025<br />
-                        Views: 673 • Avg. Completion: 78%
-                      </p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
+                        <div>
+                          <strong>Private Banking Strategy - Case Study</strong>
+                          <p className="mt-1" style={{ fontSize: '0.9rem', color: 'var(--silver-dark)' }}>
+                            Duration: 28:45 • Uploaded: Jan 10, 2025<br />
+                            Views: 673 • Avg. Completion: 78%
+                          </p>
+                        </div>
+                        <div>
+                          <button className="btn btn-sm btn-primary">Edit</button>
+                          <button className="btn btn-sm btn-secondary">Preview</button>
+                        </div>
+                      </div>
                     </div>
                     <button className="btn btn-secondary btn-block mt-2">View All Videos (24)</button>
                   </div>
@@ -700,6 +744,10 @@ const Admin = () => {
                       • Entity Structuring & S-Corp Benefits<br />
                       • Asset Protection Strategies
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm" style={{ background: 'white', color: 'var(--navy-primary)' }}>Edit Pillar</button>
+                      <button className="btn btn-sm" style={{ background: 'transparent', border: '1px solid white', color: 'white' }}>Manage Courses</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'linear-gradient(135deg, #d4af37 0%, #C49A2E 100%)', color: 'white' }}>
                     <h3>💰 Pillar 2: Personal Tax Optimization</h3>
@@ -709,6 +757,10 @@ const Admin = () => {
                       • IRC §7702 - Private Banking Strategy<br />
                       • Augusta Rule (IRC §280A)
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm" style={{ background: 'white', color: 'var(--navy-primary)' }}>Edit Pillar</button>
+                      <button className="btn btn-sm" style={{ background: 'transparent', border: '1px solid white', color: 'white' }}>Manage Courses</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'linear-gradient(135deg, #2ECC71 0%, #27AE60 100%)', color: 'white' }}>
                     <h3>🏦 Pillar 3: Retirement & Investment</h3>
@@ -717,6 +769,10 @@ const Admin = () => {
                       • Defined Benefit & Cash Balance Plans<br />
                       • IRC §1031 Exchanges
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm" style={{ background: 'white', color: 'var(--navy-primary)' }}>Edit Pillar</button>
+                      <button className="btn btn-sm" style={{ background: 'transparent', border: '1px solid white', color: 'white' }}>Manage Courses</button>
+                    </div>
                   </div>
                   <div className="card" style={{ background: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)', color: 'white' }}>
                     <h3>🏛️ Pillar 4: Legacy & Advanced Strategies</h3>
@@ -727,6 +783,10 @@ const Admin = () => {
                       • EXIT & SALE OF PRACTICE<br />
                       • Tax Plan Integration & Implementation
                     </p>
+                    <div className="btn-group mt-2">
+                      <button className="btn btn-sm" style={{ background: 'white', color: 'var(--navy-primary)' }}>Edit Pillar</button>
+                      <button className="btn btn-sm" style={{ background: 'transparent', border: '1px solid white', color: 'white' }}>Manage Courses</button>
+                    </div>
                   </div>
                 </div>
               </div>
