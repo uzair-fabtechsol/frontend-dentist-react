@@ -1,187 +1,105 @@
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import Grid from '@mui/material/Grid'
-import { 
-  Calendar, 
-  Users, 
-  TrendingUp, 
-  Clock,
-  CheckCircle2,
-  AlertCircle,
-  ArrowRight
-} from 'lucide-react'
-import Button from '../../components/Button'
-
-const statsData = [
-  { 
-    label: 'Total Patients', 
-    value: '2,847', 
-    change: '+12%', 
-    icon: Users,
-    color: '#1a2332'
-  },
-  { 
-    label: 'Appointments Today', 
-    value: '18', 
-    change: '+3', 
-    icon: Calendar,
-    color: '#28a745'
-  },
-  { 
-    label: 'Revenue This Month', 
-    value: '$48,250', 
-    change: '+8.2%', 
-    icon: TrendingUp,
-    color: '#d4af37'
-  },
-  { 
-    label: 'Avg. Wait Time', 
-    value: '12 min', 
-    change: '-5%', 
-    icon: Clock,
-    color: '#4a90e2'
-  },
-]
-
-const upcomingAppointments = [
-  { time: '09:00 AM', patient: 'Sarah Johnson', type: 'Routine Checkup', status: 'confirmed' },
-  { time: '10:30 AM', patient: 'Mike Williams', type: 'Root Canal', status: 'confirmed' },
-  { time: '11:45 AM', patient: 'Emily Davis', type: 'Teeth Cleaning', status: 'pending' },
-  { time: '02:00 PM', patient: 'James Brown', type: 'Crown Fitting', status: 'confirmed' },
-]
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <Box className="space-y-8">
-      {/* Welcome Section */}
-      <Box 
-        className="rounded-2xl p-6 md:p-8"
-        sx={{
-          background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #4a5568 100%)',
-          color: 'white',
-          border: '1px solid rgba(212, 175, 55, 0.3)',
-        }}
-      >
-        <Typography variant="h4" fontWeight={700} gutterBottom>
-          Welcome back, Dr. Smith! 👋
-        </Typography>
-        <Typography variant="body1" sx={{ opacity: 0.9, maxWidth: '600px' }}>
-          You have 18 appointments scheduled for today. Your first patient arrives in 45 minutes.
-        </Typography>
-        <Button 
-          variant="contained" 
-          color="secondary"
-          endIcon={<ArrowRight className="w-4 h-4" />}
-          sx={{ mt: 3 }}
-        >
-          View Today's Schedule
-        </Button>
-      </Box>
+    <div className="container">
+      {/* Welcome Card */}
+      <div className="card text-center fade-in">
+        <div className="card-header">
+          <h1 className="card-title">Welcome to Your Financial Freedom Journey</h1>
+          <p className="card-subtitle">Master Tax & Wealth Planning with Norman Dotch's Proven System</p>
+        </div>
+        
+        <div className="alert alert-info">
+          <strong>The Architect's Edition</strong> - A personalized training program that generates custom courses based on your specific tax strategies, designed exclusively for dentists to master wealth building and legacy planning.
+        </div>
 
-      {/* Stats Grid */}
-      <Grid container spacing={3}>
-        {statsData.map((stat, index) => {
-          const Icon = stat.icon
-          return (
-            <Grid item xs={12} sm={6} lg={3} key={index}>
-              <Card className="hover-lift h-full">
-                <CardContent className="flex items-start justify-between">
-                  <Box>
-                    <Typography variant="body2" color="text.secondary" gutterBottom>
-                      {stat.label}
-                    </Typography>
-                    <Typography variant="h4" fontWeight={700} color="primary.main">
-                      {stat.value}
-                    </Typography>
-                    <Typography 
-                      variant="caption" 
-                      sx={{ 
-                        color: stat.change.startsWith('+') ? 'success.main' : 'error.main',
-                        fontWeight: 600 
-                      }}
-                    >
-                      {stat.change} from last month
-                    </Typography>
-                  </Box>
-                  <Box 
-                    className="p-3 rounded-xl"
-                    sx={{ bgcolor: `${stat.color}15` }}
-                  >
-                    <Icon className="w-6 h-6" style={{ color: stat.color }} />
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          )
-        })}
-      </Grid>
+        <h2 className="mt-4 mb-3">Select Your Portal</h2>
+        
+        <div className="grid grid-2 mt-4">
+          <Link to="/onboarding" style={{ textDecoration: 'none' }}>
+            <div className="role-card">
+              <div className="role-icon">🎓</div>
+              <h3>Student Portal</h3>
+              <p>Access your training curriculum, complete modules, track progress, and earn your certification.</p>
+              <button className="btn btn-primary mt-3">Enter Student Portal</button>
+            </div>
+          </Link>
 
-      {/* Upcoming Appointments */}
-      <Card>
-        <CardContent>
-          <Box className="flex items-center justify-between mb-4">
-            <Typography variant="h6" fontWeight={600} color="primary.main">
-              Today's Appointments
-            </Typography>
-            <Button variant="text" size="small" endIcon={<ArrowRight className="w-4 h-4" />}>
-              View All
-            </Button>
-          </Box>
-          
-          <Box className="space-y-3">
-            {upcomingAppointments.map((apt, index) => (
-              <Box 
-                key={index}
-                className="flex items-center justify-between p-4 rounded-xl"
-                sx={{ bgcolor: 'grey.50', border: '1px solid', borderColor: 'grey.200' }}
-              >
-                <Box className="flex items-center gap-4">
-                  <Box 
-                    className="px-3 py-2 rounded-lg text-center"
-                    sx={{ 
-                      background: 'linear-gradient(135deg, #1a2332 0%, #2d3e50 100%)', 
-                      color: 'white', 
-                      minWidth: '80px' 
-                    }}
-                  >
-                    <Typography variant="body2" fontWeight={600}>
-                      {apt.time}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography variant="body1" fontWeight={600} color="primary.main">
-                      {apt.patient}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {apt.type}
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box className="flex items-center gap-2">
-                  {apt.status === 'confirmed' ? (
-                    <CheckCircle2 className="w-5 h-5" style={{ color: '#28a745' }} />
-                  ) : (
-                    <AlertCircle className="w-5 h-5" style={{ color: '#d4af37' }} />
-                  )}
-                  <Typography 
-                    variant="caption" 
-                    sx={{ 
-                      color: apt.status === 'confirmed' ? 'success.main' : 'secondary.main',
-                      fontWeight: 600,
-                      textTransform: 'capitalize'
-                    }}
-                  >
-                    {apt.status}
-                  </Typography>
-                </Box>
-              </Box>
-            ))}
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
+          <Link to="/chat" style={{ textDecoration: 'none' }}>
+            <div className="role-card">
+              <div className="role-icon">🤖</div>
+              <h3>AI Assistant - Vicky</h3>
+              <p>24/7 AI companion for personalized guidance, reminders, and implementation support.</p>
+              <button className="btn btn-gold mt-3">Chat with Vicky</button>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      {/* Program Overview Card */}
+      <div className="card mt-4 fade-in">
+        <h2 className="card-title">Program Overview</h2>
+        
+        <div className="grid grid-3 mt-3">
+          <div>
+            <h3>💻 Tax Planning Software</h3>
+            <p>Full access to The Tax Truths Tax Planning Software with updates through December 31, 2030.</p>
+          </div>
+          <div>
+            <h3>🎯 Personalized Curriculum</h3>
+            <p>12-week Training Academy with voice narration - dynamic courses generated based on your tax plan.</p>
+          </div>
+          <div>
+            <h3>📚 Strategy Archive</h3>
+            <p>Access 150+ IRS-backed tax codes and strategies with regular law updates.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-3 mt-3">
+          <div>
+            <h3>📊 Real-Time Savings</h3>
+            <p>Track your actual tax savings as you implement strategies from your custom plan.</p>
+          </div>
+          <div>
+            <h3>🎙️ Monthly Expert Q&A</h3>
+            <p>Live Monthly "Architect's Q&A" sessions with Norman Dotch plus direct quarterly consultations.</p>
+          </div>
+          <div>
+            <h3>🤖 AI Assistant - Vicky</h3>
+            <p>24/7 AI Tax Architect providing personalized guidance and implementation support.</p>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <h3>What You'll Master:</h3>
+          <ul className="list-styled mt-2">
+            <li>Advanced tax strategies tailored to your practice (IRC §469, §7702, §831(b), and more)</li>
+            <li>Asset protection and wealth preservation techniques</li>
+            <li>Retirement planning and passive income generation</li>
+            <li>Legacy planning and multi-generational wealth transfer</li>
+            <li>Real estate investing and tax optimization</li>
+            <li>Business entity structuring and optimization specific to your situation</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Meet Your Team Card */}
+      <div className="card mt-4 fade-in">
+        <h2 className="card-title">Meet Your Team</h2>
+        
+        <div className="grid grid-2 mt-3">
+          <div>
+            <h4>Norman Dotch - Lead Instructor</h4>
+            <p>Expert tax architect with decades of experience helping dentists build wealth through strategic tax planning.</p>
+          </div>
+          <div>
+            <h4>Vicky - AI Learning Companion</h4>
+            <p>Your 24/7 AI assistant providing personalized guidance, reminders, and implementation support throughout your journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
