@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 
 const Curriculum = () => {
   return (
-    <div className="max-w-[1200px] mx-auto my-8 px-8 md:px-6 sm:px-4">
+    <div className="max-w-[1200px] mx-auto my-8">
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         <h1 className="text-[#1a2332] text-[1.75rem] font-semibold">Your Personalized Curriculum</h1>
         <p className="text-[#8b95a5] text-base mt-2">Dynamic Courses Generated from Your Tax Plan</p>
 
-        <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
+        <div className="py-4 px-6 rounded-md mb-6 border-0 border-solid border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
           <strong>📊 Tailored to Your Strategy</strong><br />
           These courses are automatically generated based on the specific tax strategies selected in your personalized tax plan. As you update your plan, your curriculum will adapt to match.
         </div>
@@ -28,7 +28,7 @@ const Curriculum = () => {
       </div>
 
       {/* Pillar 1: Business Foundation */}
-      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-l-4 border-[#4a90e2]">
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-0 border-solid border-l-4 border-[#4a90e2]">
         <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">📘 Pillar 1: Business Foundation</h2>
         <p className="mt-4 text-[#666]">Courses in this pillar are based on your business structure selections</p>
 
@@ -68,7 +68,7 @@ const Curriculum = () => {
       </div>
 
       {/* Pillar 2: Personal Tax Optimization */}
-      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-l-4 border-[#d4af37]">
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-0 border-solid border-l-4 border-[#d4af37]">
         <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">💰 Pillar 2: Personal Tax Optimization</h2>
         <p className="mt-4 text-[#666]">Courses in this pillar match your personal tax strategy selections</p>
 
@@ -113,7 +113,7 @@ const Curriculum = () => {
       </div>
 
       {/* Pillar 3: Retirement & Investment Mastery */}
-      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-l-4 border-[#28a745]">
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-0 border-solid border-l-4 border-[#28a745]">
         <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">🏦 Pillar 3: Retirement & Investment</h2>
         <p className="mt-4 text-[#666]">Courses in this pillar align with your retirement and investment strategies</p>
 
@@ -145,7 +145,7 @@ const Curriculum = () => {
       </div>
 
       {/* Pillar 4: Legacy & Advanced Strategies */}
-      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-l-4 border-[#764ba2]">
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8 animate-[fadeIn_0.5s_ease-in] border-0 border-solid border-l-4 border-[#764ba2]">
         <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">🏛️ Pillar 4: Legacy & Advanced Strategies</h2>
         <p className="mt-4 text-[#666]">Advanced courses based on your legacy and wealth transfer goals</p>
 
@@ -222,7 +222,7 @@ const Curriculum = () => {
       </div>
 
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8">
-        <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d4edda] border-[#155724] text-[#155724]">
+        <div className="py-4 px-6 rounded-md mb-6 border-0 border-solid border-l-4 bg-[#d4edda] border-[#155724] text-[#155724]">
           <strong>💡 Pro Tip:</strong> Your curriculum updates automatically when you modify your tax plan. Add or remove strategies anytime, and your courses will adapt accordingly.
         </div>
 

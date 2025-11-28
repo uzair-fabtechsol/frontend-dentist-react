@@ -10,7 +10,7 @@ const Home = () => {
           <p className="text-[#8b95a5] text-base mt-2">Master Tax & Wealth Planning with Norman Dotch's Proven System</p>
         </div>
         
-        <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460]">
+        <div className="py-4 px-6 rounded-md mb-6 border-0 border-l-4 border-solid border-[#0c5460] bg-[#d1ecf1] text-[#0c5460]">
           <strong>The Architect's Edition</strong> - A personalized training program that generates custom courses based on your specific tax strategies, designed exclusively for dentists to master wealth building and legacy planning.
         </div>
 

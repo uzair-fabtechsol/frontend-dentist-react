@@ -90,7 +90,7 @@ const Chat = () => {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto my-8 px-8 md:px-6 sm:px-4">
+    <div className="max-w-[1200px] mx-auto my-8">
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         {/* Chat Container */}
         <div className="flex flex-col h-[600px] md:h-[500px] sm:h-[450px] bg-white rounded-lg overflow-hidden">
@@ -252,7 +252,7 @@ const Chat = () => {
       </div>
 
       {/* Privacy Alert */}
-      <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-8">
+      <div className="py-4 px-6 rounded-md mb-6 border-0 border-solid border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-8">
         <strong>🔒 Your Privacy Matters</strong><br />
         All conversations with Vicky are encrypted and confidential. We never share your personal information or strategy discussions.
       </div>

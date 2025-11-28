@@ -17,18 +17,18 @@ const Admin = () => {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto my-8 px-8 md:px-6 sm:px-4">
+    <div className="max-w-[1200px] mx-auto my-8">
       {/* Role Switcher */}
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         <div className="bg-[#1a2332] p-4 my-4 rounded-lg flex flex-col sm:flex-row justify-center gap-4">
           <button 
-            className={`py-3 px-8 border-2 border-[#d4af37] bg-transparent text-white cursor-pointer rounded-md font-semibold transition-all duration-300 ${activeRole === 'admin' ? 'bg-[#d4af37] text-[#1a2332]' : 'hover:bg-[#d4af37] hover:text-[#1a2332]'}`}
+            className={`py-3 px-8 border-2 border-solid border-[#d4af37] cursor-pointer rounded-md font-semibold transition-all duration-300 ${activeRole === 'admin' ? 'bg-[#d4af37] text-[#1a2332]' : 'bg-transparent text-white hover:bg-[#d4af37] hover:text-[#1a2332]'}`}
             onClick={() => switchRole('admin')}
           >
             ⚙️ Administrator View
           </button>
           <button 
-            className={`py-3 px-8 border-2 border-[#d4af37] bg-transparent text-white cursor-pointer rounded-md font-semibold transition-all duration-300 ${activeRole === 'instructor' ? 'bg-[#d4af37] text-[#1a2332]' : 'hover:bg-[#d4af37] hover:text-[#1a2332]'}`}
+            className={`py-3 px-8 border-2 border-solid border-[#d4af37] cursor-pointer rounded-md font-semibold transition-all duration-300 ${activeRole === 'instructor' ? 'bg-[#d4af37] text-[#1a2332]' : 'bg-transparent text-white hover:bg-[#d4af37] hover:text-[#1a2332]'}`}
             onClick={() => switchRole('instructor')}
           >
             👨‍🏫 Instructor View
@@ -108,7 +108,7 @@ const Admin = () => {
                     <td className="p-4">92%</td>
                     <td className="p-4">2 hours ago</td>
                     <td className="p-4"><span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">On Track</span></td>
-                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
+                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
                   </tr>
                   <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
                     <td className="p-4"><strong>Dr. Michael Johnson</strong></td>
@@ -121,7 +121,7 @@ const Admin = () => {
                     <td className="p-4">88%</td>
                     <td className="p-4">5 hours ago</td>
                     <td className="p-4"><span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#ffc107] text-[#1a2332]">At Risk</span></td>
-                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
+                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
                   </tr>
                   <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
                     <td className="p-4"><strong>Dr. Lisa Martinez</strong></td>
@@ -134,7 +134,7 @@ const Admin = () => {
                     <td className="p-4">94%</td>
                     <td className="p-4">1 day ago</td>
                     <td className="p-4"><span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">On Track</span></td>
-                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
+                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
                   </tr>
                   <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
                     <td className="p-4"><strong>Dr. James Williams</strong></td>
@@ -147,7 +147,7 @@ const Admin = () => {
                     <td className="p-4">76%</td>
                     <td className="p-4">3 days ago</td>
                     <td className="p-4"><span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#dc3545] text-white">Needs Attention</span></td>
-                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
+                    <td className="p-4"><button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -198,10 +198,10 @@ const Admin = () => {
                     <span className="text-[#4a90e2] font-bold">3</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add New User</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Import Users</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Export User Data</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Suspensions</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add New User</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Import Users</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Export User Data</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Suspensions</button>
                   </div>
                 </div>
               )}
@@ -225,10 +225,10 @@ const Admin = () => {
                     <span className="text-[#4a90e2] font-bold">4.8/5.0</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add Instructor</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Performance Reports</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Assign Students</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Schedules</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add Instructor</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Performance Reports</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Assign Students</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Schedules</button>
                   </div>
                 </div>
               )}
@@ -248,9 +248,9 @@ const Admin = () => {
                     <span className="text-[#4a90e2] font-bold">3 levels</span>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Configure Roles</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Audit Permissions</button>
-                    <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Access Logs</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Configure Roles</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Audit Permissions</button>
+                    <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Access Logs</button>
                   </div>
                 </div>
               )}
@@ -263,18 +263,18 @@ const Admin = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div className="bg-[#e8eaed] p-6 rounded-lg">
                 <h4 className="text-[#1a2332] font-semibold">Pending Certifications (12)</h4>
-                <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-4">
+                <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-4">
                   <strong className="text-[#1a2332]">Dr. Sarah Chen</strong> - Week 12 Complete
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Approve</button>
-                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Details</button>
+                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Approve</button>
+                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Details</button>
                   </div>
                 </div>
-                <div className="bg-white border-l-4 border-[#4a90e2] p-4 rounded shadow-sm">
+                <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 rounded shadow-sm">
                   <strong className="text-[#1a2332]">Dr. Emily Rodriguez</strong> - Week 12 Complete
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Approve</button>
-                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Details</button>
+                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Approve</button>
+                    <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Details</button>
                   </div>
                 </div>
               </div>
@@ -296,7 +296,7 @@ const Admin = () => {
                   <span className="font-semibold text-[#1a2332]">Avg. Completion Time:</span>
                   <span className="text-[#4a90e2] font-bold">14.2 weeks</span>
                 </div>
-                <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">Generate Certificates</button>
+                <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">Generate Certificates</button>
               </div>
             </div>
           </div>
@@ -304,23 +304,23 @@ const Admin = () => {
           {/* Compliance & System Monitoring */}
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">✅ Compliance Checks & System Monitoring</h2>
-            <div className="p-4 my-2 rounded-md border-l-4 bg-[#e8f5e9] border-[#28a745]">
+            <div className="p-4 my-2 rounded-md border-0 border-solid border-l-4 bg-[#e8f5e9] border-[#28a745]">
               <strong>✓ All Systems Operational</strong><br />
               Platform uptime: 99.97% this month | Last backup: 2 hours ago
             </div>
-            <div className="p-4 my-2 rounded-md border-l-4 bg-[#fff3e0] border-[#ffc107]">
+            <div className="p-4 my-2 rounded-md border-0 border-solid border-l-4 bg-[#fff3e0] border-[#ffc107]">
               <strong>⚠️ Compliance Alert</strong><br />
               3 students have incomplete mandatory assessments - automated reminders sent
             </div>
-            <div className="p-4 my-2 rounded-md border-l-4 bg-[#e8f5e9] border-[#28a745]">
+            <div className="p-4 my-2 rounded-md border-0 border-solid border-l-4 bg-[#e8f5e9] border-[#28a745]">
               <strong>✓ Data Privacy Compliance</strong><br />
               GDPR & CCPA compliant | Last audit: January 15, 2025
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View Full Compliance Report</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">System Health Check</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Security Audit</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Generate Compliance Certificate</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View Full Compliance Report</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">System Health Check</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Security Audit</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Generate Compliance Certificate</button>
             </div>
           </div>
 
@@ -347,8 +347,8 @@ const Admin = () => {
                     <td className="p-4">94%</td>
                     <td className="p-4">Jan 10, 2025</td>
                     <td className="p-4 flex gap-2">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
                     </td>
                   </tr>
                   <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
@@ -358,8 +358,8 @@ const Admin = () => {
                     <td className="p-4">87%</td>
                     <td className="p-4">Jan 12, 2025</td>
                     <td className="p-4 flex gap-2">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
                     </td>
                   </tr>
                   <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
@@ -369,18 +369,18 @@ const Admin = () => {
                     <td className="p-4">91%</td>
                     <td className="p-4">Jan 15, 2025</td>
                     <td className="p-4 flex gap-2">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Stats</button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add New Module</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Update Content</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Content Release</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Module Analytics</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Add New Module</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Update Content</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Content Release</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Module Analytics</button>
             </div>
           </div>
 
@@ -428,10 +428,10 @@ const Admin = () => {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Download Full Report</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Revenue Dashboard</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Custom Analytics</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Export Data</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Download Full Report</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Revenue Dashboard</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Custom Analytics</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Export Data</button>
             </div>
           </div>
 
@@ -439,7 +439,7 @@ const Admin = () => {
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">📚 Curriculum & Video Management</h2>
             <p className="text-[#8b95a5] text-base mt-2">Manage course content, upload video lessons, and organize weekly curriculum</p>
-            <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
+            <div className="py-4 px-6 rounded-md mb-6 border-0 border-solid border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
               <strong>📊 Content Status:</strong> 11 active courses • 8 video lessons uploaded • 4 pending review
             </div>
 
@@ -474,9 +474,9 @@ const Admin = () => {
             {activeCurriculumTab === 'courses' && (
               <div className="mt-6">
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all" onClick={() => setShowAddCourseModal(true)}>+ Add New Course</button>
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Import Courses</button>
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Edit</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all" onClick={() => setShowAddCourseModal(true)}>+ Add New Course</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Import Courses</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Bulk Edit</button>
                 </div>
                 <div className="overflow-x-auto mt-6">
                   <table className="w-full border-collapse bg-white">
@@ -498,8 +498,8 @@ const Admin = () => {
                         <td className="p-4">147</td>
                         <td className="p-4">78%</td>
                         <td className="p-4 flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </td>
                       </tr>
                       <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
@@ -509,8 +509,8 @@ const Admin = () => {
                         <td className="p-4">32</td>
                         <td className="p-4">45%</td>
                         <td className="p-4 flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </td>
                       </tr>
                       <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
@@ -520,8 +520,8 @@ const Admin = () => {
                         <td className="p-4">89</td>
                         <td className="p-4">82%</td>
                         <td className="p-4 flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </td>
                       </tr>
                       <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
@@ -531,8 +531,8 @@ const Admin = () => {
                         <td className="p-4">15</td>
                         <td className="p-4">23%</td>
                         <td className="p-4 flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </td>
                       </tr>
                     </tbody>
@@ -594,8 +594,8 @@ const Admin = () => {
                       <textarea className="w-full py-3 px-4 border-2 border-[#e8eaed] rounded-md text-base bg-white min-h-[100px] resize-y" rows="3" placeholder="Brief description of the video lesson"></textarea>
                     </div>
                     <div className="flex flex-wrap gap-4 mt-6">
-                      <button type="submit" className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Upload Video</button>
-                      <button type="button" className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Save as Draft</button>
+                      <button type="submit" className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Upload Video</button>
+                      <button type="button" className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Save as Draft</button>
                     </div>
                   </form>
                 </div>
@@ -603,7 +603,7 @@ const Admin = () => {
                 <div className="bg-[#e8eaed] rounded-lg p-8 shadow-md">
                   <h3 className="text-[#1a2332] font-semibold">🎬 Video Library</h3>
                   <div className="mt-6">
-                    <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+                    <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
                       <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                         <div>
                           <strong className="text-[#1a2332]">Entity Structuring - Main Lesson</strong>
@@ -613,12 +613,12 @@ const Admin = () => {
                           </p>
                         </div>
                         <div className="flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+                    <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
                       <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                         <div>
                           <strong className="text-[#1a2332]">IRC §469 - Passive Loss Planning</strong>
@@ -628,12 +628,12 @@ const Admin = () => {
                           </p>
                         </div>
                         <div className="flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+                    <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
                       <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                         <div>
                           <strong className="text-[#1a2332]">Private Banking Strategy - Case Study</strong>
@@ -643,12 +643,12 @@ const Admin = () => {
                           </p>
                         </div>
                         <div className="flex gap-2">
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
-                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit</button>
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                         </div>
                       </div>
                     </div>
-                    <button className="w-full py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-4">View All Videos (24)</button>
+                    <button className="w-full py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-4">View All Videos (24)</button>
                   </div>
                 </div>
               </div>
@@ -658,9 +658,9 @@ const Admin = () => {
             {activeCurriculumTab === 'weekly' && (
               <div className="mt-6">
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">+ Add Weekly Content</button>
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Release</button>
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Clone Week</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">+ Add Weekly Content</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Release</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Clone Week</button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                   <div className="bg-[#e8eaed] rounded-lg p-8 shadow-md">
@@ -671,7 +671,7 @@ const Admin = () => {
                     <p className="mt-4"><strong>R.O.B.S. Strategy</strong></p>
                     <p className="text-[0.9rem] text-[#8b95a5]">Removed for compliance</p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Archive</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Archive</button>
                     </div>
                   </div>
                   <div className="bg-[#e8eaed] rounded-lg p-8 shadow-md">
@@ -686,8 +686,8 @@ const Admin = () => {
                       📄 Resources: 3 PDFs
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Preview</button>
                     </div>
                   </div>
                   <div className="bg-[#e8eaed] rounded-lg p-8 shadow-md">
@@ -702,8 +702,8 @@ const Admin = () => {
                       📄 Resources: 1 PDF
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Add Content</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Add Content</button>
                     </div>
                   </div>
                   <div className="bg-[#e8eaed] rounded-lg p-8 shadow-md">
@@ -718,13 +718,13 @@ const Admin = () => {
                       📄 Resources: 0 files
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Add Content</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Edit Week</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Add Content</button>
                     </div>
                   </div>
                 </div>
                 <div className="text-center mt-6">
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View All 12 Weeks →</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View All 12 Weeks →</button>
                 </div>
               </div>
             )}
@@ -733,8 +733,8 @@ const Admin = () => {
             {activeCurriculumTab === 'pillars' && (
               <div className="mt-6">
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">+ Add New Pillar</button>
-                  <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Reorder Pillars</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">+ Add New Pillar</button>
+                  <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Reorder Pillars</button>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                   <div className="bg-gradient-to-br from-[#4a90e2] to-[#357ABD] text-white rounded-lg p-8 shadow-md">
@@ -745,7 +745,7 @@ const Admin = () => {
                       • Asset Protection Strategies
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
@@ -758,7 +758,7 @@ const Admin = () => {
                       • Augusta Rule (IRC §280A)
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
@@ -770,7 +770,7 @@ const Admin = () => {
                       • IRC §1031 Exchanges
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
@@ -784,7 +784,7 @@ const Admin = () => {
                       • Tax Plan Integration & Implementation
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
@@ -871,7 +871,7 @@ const Admin = () => {
           {/* Students Requiring Attention */}
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">⚠️ Students Requiring Attention</h2>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div>
                   <h4 className="m-0 text-[#1a2332] font-semibold">Dr. James Williams</h4>
@@ -879,8 +879,8 @@ const Admin = () => {
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#dc3545] text-white">Needs Attention</span>
                 </div>
                 <div className="flex gap-2">
-                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Message</button>
-                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Call</button>
+                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Message</button>
+                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Call</button>
                 </div>
               </div>
               <div className="mt-4">
@@ -890,7 +890,7 @@ const Admin = () => {
                 <p className="mt-2 text-[0.9rem] text-[#2c3e50]">Last quiz score: 76% | 2 modules incomplete</p>
               </div>
             </div>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div>
                   <h4 className="m-0 text-[#1a2332] font-semibold">Dr. Michael Johnson</h4>
@@ -898,8 +898,8 @@ const Admin = () => {
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#ffc107] text-[#1a2332]">At Risk</span>
                 </div>
                 <div className="flex gap-2">
-                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Message</button>
-                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Call</button>
+                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Message</button>
+                  <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule Call</button>
                 </div>
               </div>
               <div className="mt-4">
@@ -914,34 +914,34 @@ const Admin = () => {
           {/* Student Questions */}
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">💬 Recent Student Questions</h2>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div className="flex-1">
                   <strong className="text-[#1a2332]">Dr. Michael Johnson</strong> (Week 5)
                   <p className="my-2 text-[#2c3e50]">"Can you explain the difference between §7702 and §831(b) for practice structure?"</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#4a90e2] text-white">2 hours ago</span>
                 </div>
-                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
+                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
               </div>
             </div>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div className="flex-1">
                   <strong className="text-[#1a2332]">Dr. Lisa Martinez</strong> (Week 8)
                   <p className="my-2 text-[#2c3e50]">"What's the typical timeline for completing a cost segregation study?"</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#4a90e2] text-white">5 hours ago</span>
                 </div>
-                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
+                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
               </div>
             </div>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div className="flex-1">
                   <strong className="text-[#1a2332]">Dr. Emily Rodriguez</strong> (Week 10)
                   <p className="my-2 text-[#2c3e50]">"Need guidance on structuring my first 1031 exchange for real estate investment."</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#4a90e2] text-white">1 day ago</span>
                 </div>
-                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
+                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Respond</button>
               </div>
             </div>
             <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">View All Questions (47)</button>
@@ -957,7 +957,7 @@ const Admin = () => {
                   <p className="my-2 text-[#2c3e50]">First Thursday of Month, 7:00 PM EST</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">67 students registered</span>
                 </div>
-                <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Join Session</button>
+                <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Join Session</button>
               </div>
             </div>
             <div className="bg-[#e8eaed] p-6 rounded-lg mt-4">
@@ -967,13 +967,13 @@ const Admin = () => {
                   <p className="my-2 text-[#2c3e50]">Saturday, 2:00 PM EST</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">143 students registered</span>
                 </div>
-                <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Prepare Session</button>
+                <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Prepare Session</button>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule New Session</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Session History</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Upload Recording</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule New Session</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Session History</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Upload Recording</button>
             </div>
           </div>
 
@@ -987,7 +987,7 @@ const Admin = () => {
                   <p className="my-2 text-[#2c3e50]">Direct one-on-one strategy review sessions</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#4a90e2] text-white">34 consultations scheduled</span>
                 </div>
-                <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View Schedule</button>
+                <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">View Schedule</button>
               </div>
             </div>
             <div className="bg-[#e8eaed] p-6 rounded-lg mt-4">
@@ -997,20 +997,20 @@ const Admin = () => {
                   <p className="my-2 text-[#2c3e50]">Students requesting quarterly review</p>
                   <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#ffc107] text-[#1a2332]">12 pending requests</span>
                 </div>
-                <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review Requests</button>
+                <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review Requests</button>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Consultation Calendar</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Send Consultation Invites</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Past Consultations</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Manage Consultation Calendar</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Send Consultation Invites</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Past Consultations</button>
             </div>
           </div>
 
           {/* Certification Review */}
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">🏆 Certification Review Queue</h2>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm mt-6">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div>
                   <h4 className="m-0 text-[#1a2332] font-semibold">Dr. Sarah Chen</h4>
@@ -1019,10 +1019,10 @@ const Admin = () => {
                     ✓ All modules complete | ✓ Final assessment passed | ✓ Implementation case study submitted
                   </p>
                 </div>
-                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Certify</button>
+                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Certify</button>
               </div>
             </div>
-            <div className="bg-white border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
+            <div className="bg-white border-0 border-solid border-l-4 border-[#4a90e2] p-4 mb-4 rounded shadow-sm">
               <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                 <div>
                   <h4 className="m-0 text-[#1a2332] font-semibold">Dr. Emily Rodriguez</h4>
@@ -1031,7 +1031,7 @@ const Admin = () => {
                     ✓ All modules complete | ✓ Final assessment passed | ✓ Implementation case study submitted
                   </p>
                 </div>
-                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Certify</button>
+                <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Review & Certify</button>
               </div>
             </div>
             <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">View All Pending (12)</button>
@@ -1047,9 +1047,9 @@ const Admin = () => {
               <li className="py-3 pl-6 relative border-b-0 before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold"><strong>Dr. Michael Thompson</strong> - Implemented cost segregation study, accelerating $340K in depreciation</li>
             </ul>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Share Success Story</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Request Testimonial</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View All Stories</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Share Success Story</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Request Testimonial</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View All Stories</button>
             </div>
           </div>
 
@@ -1057,12 +1057,12 @@ const Admin = () => {
           <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 mt-8">
             <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">⚙️ Instructor Actions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Announcement to All Students</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule New Live Session</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Update Course Content</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Student Analytics</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Message Students at Risk</button>
-              <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Generate Progress Reports</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Send Announcement to All Students</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Schedule New Live Session</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Update Course Content</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">View Student Analytics</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Message Students at Risk</button>
+              <button className="py-3 px-6 rounded-md font-semibold border-none bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all">Generate Progress Reports</button>
             </div>
           </div>
         </div>
@@ -1130,7 +1130,7 @@ const Admin = () => {
               </div>
               <div className="py-4 px-8 border-t-2 border-[#e8eaed] flex flex-col sm:flex-row justify-end gap-4 bg-[#e8eaed] rounded-b-lg">
                 <button type="button" className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all" onClick={() => setShowAddCourseModal(false)}>Cancel</button>
-                <button type="submit" className="py-3 px-6 rounded-md font-semibold bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Create Course</button>
+                <button type="submit" className="py-3 px-6 rounded-md font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">Create Course</button>
               </div>
             </form>
           </div>

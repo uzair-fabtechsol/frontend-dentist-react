@@ -2,21 +2,21 @@ import { Link } from 'react-router-dom'
 
 const Onboarding = () => {
   return (
-    <div className="max-w-[1200px] mx-auto my-8 px-8 md:px-6 sm:px-4">
+    <div className="max-w-[1200px] mx-auto my-8">
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         <div className="border-b-2 border-[#e8eaed] pb-4 mb-6 text-center">
           <h1 className="text-[#1a2332] text-[1.75rem] font-semibold">Welcome to the Architect's Edition! 🎉</h1>
           <p className="text-[#8b95a5] text-base mt-2">Your Journey to Financial Freedom Starts Here</p>
         </div>
 
-        <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d4edda] border-[#155724] text-[#155724]">
+        <div className="py-4 px-6 rounded-md mb-6 border-0 border-solid border-l-4 bg-[#d4edda] border-[#155724] text-[#155724]">
           <strong>Congratulations on Taking Control of Your Financial Future!</strong><br />
           You're about to embark on a transformative journey with a personalized curriculum that will revolutionize how you think about taxes, wealth, and legacy.
         </div>
 
         <div className="mt-8">
           <h2 className="text-[#1a2332]">A Personal Message from Norman Dotch</h2>
-          <div className="bg-[#e8eaed] rounded-lg p-8 mb-6 shadow-md border-l-4 border-[#d4af37] mt-4">
+          <div className="bg-[#e8eaed] rounded-lg p-8 mb-6 shadow-md border-l-4 border-solid border-0 border-[#d4af37] mt-4">
             <p className="italic text-[1.1rem] text-[#2c3e50]">
               "Welcome, Doctor! I'm thrilled you're here. For over three decades, I've watched dentists work incredibly hard, only to give away 40-50% of their income to taxes they could have legally avoided. This program exists to change that story for you.
             </p>
@@ -91,7 +91,7 @@ const Onboarding = () => {
             <li className="py-3 pl-6 relative border-b border-[#e8eaed] before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold"><strong>Retirement & Investment:</strong> Defined Benefit Plans, Cost Segregation, 1031 Exchanges</li>
             <li className="py-3 pl-6 relative border-b-0 before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold"><strong>Legacy & Advanced:</strong> Captive Insurance, Estate Planning, Wealth Transfer, Integration</li>
           </ul>
-          <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
+          <div className="py-4 px-6 rounded-md mb-6 border-l-4 border-solid border-0 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-6">
             <strong>📊 Dynamic Curriculum:</strong> Only the strategies you've selected in your tax plan will appear in your courses - ensuring every lesson is relevant to your specific situation.
           </div>
         </div>
@@ -138,7 +138,7 @@ const Onboarding = () => {
           </div>
         </div>
 
-        <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#fff3cd] border-[#856404] text-[#856404] mt-8">
+        <div className="py-4 px-6 rounded-md mb-6 border-l-4 border-solid border-0 bg-[#fff3cd] border-[#856404] text-[#856404] mt-8">
           <strong>⏰ Time Commitment:</strong> Plan for 60-90 minutes per week. Most students find Sunday mornings or Wednesday evenings work best. Block your calendar now!
         </div>
 
