@@ -75,14 +75,14 @@ const Chat = () => {
       return (
         <>
           <p><strong>{message.content.greeting}</strong></p>
-          <p style={{ marginTop: '0.5rem' }}>{message.content.intro}</p>
-          <p style={{ marginTop: '0.5rem' }}>I can help you with:</p>
-          <ul style={{ marginLeft: '1.5rem', marginTop: '0.5rem' }}>
+          <p className="mt-2">{message.content.intro}</p>
+          <p className="mt-2">I can help you with:</p>
+          <ul className="ml-6 mt-2 list-disc">
             {message.content.capabilities.map((cap, idx) => (
               <li key={idx}>{cap}</li>
             ))}
           </ul>
-          <p style={{ marginTop: '0.5rem' }}>{message.content.question}</p>
+          <p className="mt-2">{message.content.question}</p>
         </>
       )
     }
@@ -90,49 +90,73 @@ const Chat = () => {
   }
 
   return (
-    <div className="container">
-      <div className="card fade-in">
-        <div className="chat-container">
-          <div className="chat-header">
-            <h2>🤖 Vicky - Your AI Learning Companion</h2>
-            <p style={{ marginTop: '0.5rem', fontSize: '0.9rem' }}>
+    <div className="max-w-[1200px] mx-auto my-8 px-8 md:px-6 sm:px-4">
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
+        {/* Chat Container */}
+        <div className="flex flex-col h-[600px] md:h-[500px] sm:h-[450px] bg-white rounded-lg overflow-hidden">
+          {/* Chat Header */}
+          <div className="bg-gradient-to-br from-[#4a90e2] to-[#d4af37] text-white p-6 text-center">
+            <h2 className="font-semibold">🤖 Vicky - Your AI Learning Companion</h2>
+            <p className="mt-2 text-[0.9rem] opacity-90">
               24/7 support • Ask anything about the curriculum
             </p>
           </div>
 
-          <div className="chat-messages" ref={chatMessagesRef}>
+          {/* Chat Messages */}
+          <div 
+            className="flex-1 overflow-y-auto p-6 bg-[#e8eaed]" 
+            ref={chatMessagesRef}
+          >
             {messages.map((message) => (
-              <div key={message.id} className={`message ${message.type}`}>
-                <div className="message-avatar">
+              <div 
+                key={message.id} 
+                className={`mb-4 flex gap-4 ${message.type === 'user' ? 'flex-row-reverse' : ''}`}
+              >
+                {/* Avatar */}
+                <div 
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${
+                    message.type === 'ai' 
+                      ? 'bg-gradient-to-br from-[#4a90e2] to-[#d4af37] text-white' 
+                      : 'bg-[#1a2332] text-white'
+                  }`}
+                >
                   {message.type === 'ai' ? 'V' : 'DR'}
                 </div>
-                <div className="message-content">
+                {/* Message Content */}
+                <div 
+                  className={`max-w-[70%] md:max-w-[85%] sm:max-w-[90%] p-4 rounded-xl ${
+                    message.type === 'ai' 
+                      ? 'bg-white border border-[#c0c5ce] text-[#2c3e50]' 
+                      : 'bg-[#1a2332] text-white'
+                  }`}
+                >
                   {renderMessageContent(message)}
                 </div>
               </div>
             ))}
 
-            <div className="quick-actions">
+            {/* Quick Actions */}
+            <div className="flex gap-2 flex-wrap mb-4">
               <button 
-                className="quick-action-btn" 
+                className="py-2 px-4 bg-white border border-[#c0c5ce] rounded-full cursor-pointer text-[0.9rem] transition-all duration-300 hover:bg-[#4a90e2] hover:text-white hover:border-[#4a90e2]"
                 onClick={() => handleQuickAction('How does S-Corp election save me money?')}
               >
                 💡 S-Corp Benefits
               </button>
               <button 
-                className="quick-action-btn" 
+                className="py-2 px-4 bg-white border border-[#c0c5ce] rounded-full cursor-pointer text-[0.9rem] transition-all duration-300 hover:bg-[#4a90e2] hover:text-white hover:border-[#4a90e2]"
                 onClick={() => handleQuickAction('What should I focus on next?')}
               >
                 📚 Next Steps
               </button>
               <button 
-                className="quick-action-btn" 
+                className="py-2 px-4 bg-white border border-[#c0c5ce] rounded-full cursor-pointer text-[0.9rem] transition-all duration-300 hover:bg-[#4a90e2] hover:text-white hover:border-[#4a90e2]"
                 onClick={() => handleQuickAction('Show me my projected tax savings')}
               >
                 💰 My Savings
               </button>
               <button 
-                className="quick-action-btn" 
+                className="py-2 px-4 bg-white border border-[#c0c5ce] rounded-full cursor-pointer text-[0.9rem] transition-all duration-300 hover:bg-[#4a90e2] hover:text-white hover:border-[#4a90e2]"
                 onClick={() => handleQuickAction('I need help implementing a strategy')}
               >
                 🔧 Implementation Help
@@ -140,29 +164,34 @@ const Chat = () => {
             </div>
           </div>
 
-          <div className="chat-input-container">
+          {/* Chat Input Container */}
+          <div className="p-4 bg-white border-t border-[#e8eaed] flex gap-4">
             <input 
               type="text" 
-              className="chat-input" 
+              className="flex-1 py-3 px-4 border-2 border-solid border-[#c0c5ce] rounded-full text-base transition-colors duration-300 focus:outline-none focus:border-[#4a90e2] shadow-none appearance-none bg-white"
               placeholder="Type your question here..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
             />
-            <button className="send-button" onClick={handleSendMessage}>
+            <button 
+              className="py-3 px-6 bg-[#4a90e2] text-white border-none rounded-full cursor-pointer font-bold transition-colors duration-300 hover:bg-[#d4af37]"
+              onClick={handleSendMessage}
+            >
               Send ➤
             </button>
           </div>
         </div>
       </div>
 
-      <div className="card mt-4">
-        <h2 className="card-title">💡 Popular Questions</h2>
-        <ul className="list-styled mt-3">
-          <li>
+      {/* Popular Questions */}
+      <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 mt-8">
+        <h2 className="text-[#1a2332] text-[1.75rem] font-semibold">💡 Popular Questions</h2>
+        <ul className="list-none p-0 mt-6">
+          <li className="py-3 pl-6 relative border-b border-[#e8eaed] before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold">
             <a 
               href="#" 
-              style={{ color: 'var(--accent-blue)' }}
+              className="text-[#4a90e2] hover:underline"
               onClick={(e) => {
                 e.preventDefault()
                 handleQuickAction('How do I know which strategies to implement first?')
@@ -171,10 +200,10 @@ const Chat = () => {
               How do I know which strategies to implement first?
             </a>
           </li>
-          <li>
+          <li className="py-3 pl-6 relative border-b border-[#e8eaed] before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold">
             <a 
               href="#" 
-              style={{ color: 'var(--accent-blue)' }}
+              className="text-[#4a90e2] hover:underline"
               onClick={(e) => {
                 e.preventDefault()
                 handleQuickAction('Can you calculate my potential tax savings?')
@@ -183,10 +212,10 @@ const Chat = () => {
               Can you calculate my potential tax savings?
             </a>
           </li>
-          <li>
+          <li className="py-3 pl-6 relative border-b border-[#e8eaed] before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold">
             <a 
               href="#" 
-              style={{ color: 'var(--accent-blue)' }}
+              className="text-[#4a90e2] hover:underline"
               onClick={(e) => {
                 e.preventDefault()
                 handleQuickAction('What documents do I need for my CPA meeting?')
@@ -195,10 +224,10 @@ const Chat = () => {
               What documents do I need for my CPA meeting?
             </a>
           </li>
-          <li>
+          <li className="py-3 pl-6 relative border-b border-[#e8eaed] before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold">
             <a 
               href="#" 
-              style={{ color: 'var(--accent-blue)' }}
+              className="text-[#4a90e2] hover:underline"
               onClick={(e) => {
                 e.preventDefault()
                 handleQuickAction('How do I set up a meeting with a specialist?')
@@ -207,10 +236,10 @@ const Chat = () => {
               How do I set up a meeting with a specialist?
             </a>
           </li>
-          <li>
+          <li className="py-3 pl-6 relative border-b-0 before:content-['✓'] before:absolute before:left-0 before:text-[#28a745] before:font-bold">
             <a 
               href="#" 
-              style={{ color: 'var(--accent-blue)' }}
+              className="text-[#4a90e2] hover:underline"
               onClick={(e) => {
                 e.preventDefault()
                 handleQuickAction('What are the risks of each strategy?')
@@ -222,7 +251,8 @@ const Chat = () => {
         </ul>
       </div>
 
-      <div className="alert alert-info mt-4">
+      {/* Privacy Alert */}
+      <div className="py-4 px-6 rounded-md mb-6 border-l-4 bg-[#d1ecf1] border-[#0c5460] text-[#0c5460] mt-8">
         <strong>🔒 Your Privacy Matters</strong><br />
         All conversations with Vicky are encrypted and confidential. We never share your personal information or strategy discussions.
       </div>
