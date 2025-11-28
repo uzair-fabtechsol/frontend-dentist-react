@@ -160,19 +160,19 @@ const Admin = () => {
             <div className="bg-white rounded-lg overflow-hidden mt-6">
               <div className="flex flex-wrap border-b-2 border-[#e8eaed] bg-[#e8eaed]">
                 <button 
-                  className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeUserTab === 'users' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                  className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeUserTab === 'users' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                   onClick={() => setActiveUserTab('users')}
                 >
                   Users
                 </button>
                 <button 
-                  className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeUserTab === 'instructors' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                  className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeUserTab === 'instructors' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                   onClick={() => setActiveUserTab('instructors')}
                 >
                   Instructors
                 </button>
                 <button 
-                  className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeUserTab === 'permissions' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                  className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeUserTab === 'permissions' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                   onClick={() => setActiveUserTab('permissions')}
                 >
                   Permissions
@@ -445,25 +445,25 @@ const Admin = () => {
 
             <div className="flex flex-wrap border-b-2 border-[#e8eaed] bg-[#e8eaed] mt-6">
               <button 
-                className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeCurriculumTab === 'courses' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeCurriculumTab === 'courses' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                 onClick={() => setActiveCurriculumTab('courses')}
               >
                 Courses
               </button>
               <button 
-                className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeCurriculumTab === 'videos' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeCurriculumTab === 'videos' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                 onClick={() => setActiveCurriculumTab('videos')}
               >
                 Video Lessons
               </button>
               <button 
-                className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeCurriculumTab === 'weekly' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeCurriculumTab === 'weekly' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                 onClick={() => setActiveCurriculumTab('weekly')}
               >
                 Weekly Content
               </button>
               <button 
-                className={`flex-1 p-4 bg-transparent border-none cursor-pointer font-semibold transition-all ${activeCurriculumTab === 'pillars' ? 'bg-white text-[#1a2332] border-b-[3px] border-[#d4af37]' : 'text-[#8b95a5] hover:text-[#1a2332]'}`}
+                className={`flex-1 p-4 cursor-pointer font-semibold transition-all border-0 border-solid ${activeCurriculumTab === 'pillars' ? 'bg-white text-[#1a2332] border-b-[3px] border-b-[#d4af37]' : 'bg-transparent text-[#8b95a5] hover:text-[#1a2332]'}`}
                 onClick={() => setActiveCurriculumTab('pillars')}
               >
                 Manage Pillars
