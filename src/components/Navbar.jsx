@@ -1,6 +1,4 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import { 
   Home, 
   UserPlus, 
@@ -30,18 +28,8 @@ const Navbar = () => {
   }
 
   return (
-    <Box
-      component="nav"
-      className=" top-[72px] z-40 overflow-x-auto"
-      sx={{
-        bgcolor: '#2d3e50', // --navy-secondary
-        borderBottom: '1px solid rgba(212, 175, 55, 0.2)',
-      }}
-    >
-      <Box 
-        className="flex items-center gap-1 px-4 py-2 max-w-[1400px] mx-auto"
-        sx={{ minWidth: 'max-content' }}
-      >
+    <nav className="top-[72px] z-40 overflow-x-auto bg-[#2d3e50] border-b border-[#d4af37]/20">
+      <div className="flex items-center gap-1 px-4 py-2 max-w-[1400px] mx-auto min-w-max">
         {navItems.map((item) => {
           const Icon = item.icon
           const active = isActive(item.path)
@@ -52,31 +40,23 @@ const Navbar = () => {
               to={item.path}
               className="no-underline"
             >
-              <Box
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-200"
-                sx={{
-                  bgcolor: active ? '#1a2332' : 'transparent', // --navy-primary when active
-                  color: active ? '#d4af37' : '#c0c5ce', // --accent-gold when active, --silver-medium otherwise
-                  '&:hover': {
-                    bgcolor: active ? '#1a2332' : 'rgba(26, 35, 50, 0.5)',
-                    color: '#d4af37', // --accent-gold on hover
-                  },
-                }}
+              <div
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-200 ${
+                  active 
+                    ? 'bg-[#1a2332] text-[#d4af37]' 
+                    : 'bg-transparent text-[#c0c5ce] hover:bg-[#1a2332]/50 hover:text-[#d4af37]'
+                }`}
               >
                 <Icon className="w-4 h-4" />
-                <Typography 
-                  variant="body2" 
-                  fontWeight={active ? 600 : 500}
-                  sx={{ whiteSpace: 'nowrap' }}
-                >
+                <span className={`text-sm whitespace-nowrap ${active ? 'font-semibold' : 'font-medium'}`}>
                   {item.label}
-                </Typography>
-              </Box>
+                </span>
+              </div>
             </NavLink>
           )
         })}
-      </Box>
-    </Box>
+      </div>
+    </nav>
   )
 }
 
