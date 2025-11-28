@@ -746,7 +746,7 @@ const Admin = () => {
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-solid border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-[#d4af37] to-[#C49A2E] text-white rounded-lg p-8 shadow-md">
@@ -759,7 +759,7 @@ const Admin = () => {
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-solid border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-[#2ECC71] to-[#27AE60] text-white rounded-lg p-8 shadow-md">
@@ -771,7 +771,7 @@ const Admin = () => {
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-solid border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-[#764ba2] to-[#667eea] text-white rounded-lg p-8 shadow-md">
@@ -785,7 +785,7 @@ const Admin = () => {
                     </p>
                     <div className="flex flex-wrap gap-4 mt-4">
                       <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-white text-[#1a2332] hover:bg-[#e8eaed] transition-all">Edit Pillar</button>
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
+                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold bg-transparent border border-solid border-white text-white hover:bg-white/10 transition-all">Manage Courses</button>
                     </div>
                   </div>
                 </div>
