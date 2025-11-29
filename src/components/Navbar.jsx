@@ -28,8 +28,8 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="top-[72px] z-40 overflow-x-auto bg-[#2d3e50] border-b border-[#d4af37]/20">
-      <div className="flex items-center gap-1 px-4 py-2 max-w-[1400px] mx-auto min-w-max">
+    <nav className="z-40 bg-[#2d3e50] border-b border-[#d4af37]/20">
+      <div className="flex flex-col items-center gap-1 px-4 py-3 md:flex-row md:justify-evenly md:py-2 md:max-w-[1000px] md:mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon
           const active = isActive(item.path)
@@ -38,10 +38,10 @@ const Navbar = () => {
             <NavLink
               key={item.path}
               to={item.path}
-              className="no-underline"
+              className="no-underline w-full md:w-auto"
             >
               <div
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-200 ${
+                className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl transition-all duration-200 md:justify-start ${
                   active 
                     ? 'bg-[#1a2332] text-[#d4af37]' 
                     : 'bg-transparent text-[#c0c5ce] hover:bg-[#1a2332]/50 hover:text-[#d4af37]'
