@@ -22,7 +22,7 @@ const MasteryDashboard = () => {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto my-8 px-4">
+    <div className="max-w-[1400px] mx-auto my-8 px-4">
       <div className="bg-gradient-to-br from-[#4a90e2] to-[#d4af37] text-white rounded-lg p-8 mb-6 shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         <h1 className="text-[1.75rem] font-semibold mb-2">
           Welcome to the Mastery Portal

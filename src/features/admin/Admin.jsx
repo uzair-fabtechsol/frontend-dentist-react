@@ -107,7 +107,7 @@ const Admin = () => {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto my-8">
+    <div className="max-w-[1400px] mx-auto my-8">
       {/* Role Switcher */}
       <div className="bg-white rounded-lg p-8 mb-6 shadow-md transition-all duration-300 animate-[fadeIn_0.5s_ease-in]">
         <div className="bg-[#1a2332] p-4 my-4 rounded-lg flex flex-col sm:flex-row justify-center gap-4">
