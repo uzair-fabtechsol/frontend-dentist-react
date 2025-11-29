@@ -9,6 +9,8 @@ import AdminPage from "./pages/AdminPage";
 import GoalSettingPage from "./pages/GoalSettingPage";
 import HowToUsePage from "./pages/HowToUsePage";
 import Week2LessonPage from "./pages/Week2LessonPage";
+import CertificationsPage from "./pages/CertificationsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -21,9 +23,11 @@ function App() {
         <Route path="how-to-use" element={<HowToUsePage />} />
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="week2-lesson" element={<Week2LessonPage />} />
+        <Route path="certifications" element={<CertificationsPage />} />
         <Route path="curriculum" element={<CurriculumPage />} />
         <Route path="chat" element={<ChatPage />} />
         <Route path="admin" element={<AdminPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
