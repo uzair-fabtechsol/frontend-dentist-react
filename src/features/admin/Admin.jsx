@@ -1573,7 +1573,7 @@ const Admin = () => {
                 </button>
               </div>
             </div>
-            <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">
+            <button className="py-3 px-6 border-none rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">
               View All Questions (47)
             </button>
           </div>
@@ -1727,7 +1727,7 @@ const Admin = () => {
                 </button>
               </div>
             </div>
-            <button className="py-3 px-6 rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">
+            <button className="py-3 px-6 border-none rounded-md font-semibold bg-[#c0c5ce] text-[#1a2332] hover:bg-[#8b95a5] transition-all mt-6">
               View All Pending (12)
             </button>
           </div>
