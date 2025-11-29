@@ -11,6 +11,7 @@ import HowToUsePage from "./pages/HowToUsePage";
 import Week2LessonPage from "./pages/Week2LessonPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="curriculum" element={<CurriculumPage />} />
         <Route path="chat" element={<ChatPage />} />
         <Route path="admin" element={<AdminPage />} />
+        <Route path="error" element={<ErrorPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

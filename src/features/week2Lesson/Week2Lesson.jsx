@@ -76,7 +76,7 @@ const Week2Lesson = () => {
             ← Back to Dashboard
           </Link>
           <Link
-            to="/certification"
+            to="/certifications"
             className="px-6 py-3 bg-[#d4af37] text-[#1a2332] rounded-lg font-semibold text-center hover:bg-[#b8952e] transition-colors no-underline"
           >
             🏆 Show Certification
