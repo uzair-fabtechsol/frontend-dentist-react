@@ -6,6 +6,96 @@ const Admin = () => {
   const [activeCurriculumTab, setActiveCurriculumTab] = useState("courses");
   const [showAddCourseModal, setShowAddCourseModal] = useState(false);
 
+  // Student tracking filters
+  const [searchTerm, setSearchTerm] = useState("");
+  const [weekFilter, setWeekFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+
+  // Student data
+  const [students] = useState([
+    {
+      id: 1,
+      name: "Dr. Sarah Chen",
+      currentWeek: 12,
+      progress: 100,
+      quizAvg: 92,
+      lastActivity: "2 hours ago",
+      status: "on-track",
+    },
+    {
+      id: 2,
+      name: "Dr. Michael Johnson",
+      currentWeek: 5,
+      progress: 42,
+      quizAvg: 88,
+      lastActivity: "5 hours ago",
+      status: "at-risk",
+    },
+    {
+      id: 3,
+      name: "Dr. Lisa Martinez",
+      currentWeek: 8,
+      progress: 67,
+      quizAvg: 94,
+      lastActivity: "1 day ago",
+      status: "on-track",
+    },
+    {
+      id: 4,
+      name: "Dr. James Williams",
+      currentWeek: 3,
+      progress: 18,
+      quizAvg: 76,
+      lastActivity: "3 days ago",
+      status: "needs-attention",
+    },
+  ]);
+
+  // Filter students based on search, week, and status
+  const filteredStudents = students.filter((student) => {
+    // Search filter
+    const matchesSearch = student.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    // Week filter
+    let matchesWeek = true;
+    if (weekFilter) {
+      const [start, end] = weekFilter.split("-").map(Number);
+      matchesWeek = student.currentWeek >= start && student.currentWeek <= end;
+    }
+
+    // Status filter
+    const matchesStatus = !statusFilter || student.status === statusFilter;
+
+    return matchesSearch && matchesWeek && matchesStatus;
+  });
+
+  const getStatusBadge = (status) => {
+    switch (status) {
+      case "on-track":
+        return (
+          <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">
+            On Track
+          </span>
+        );
+      case "at-risk":
+        return (
+          <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#ffc107] text-[#1a2332]">
+            At Risk
+          </span>
+        );
+      case "needs-attention":
+        return (
+          <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#dc3545] text-white">
+            Needs Attention
+          </span>
+        );
+      default:
+        return null;
+    }
+  };
+
   const switchRole = (role) => {
     setActiveRole(role);
   };
@@ -85,16 +175,26 @@ const Admin = () => {
               <input
                 type="text"
                 placeholder="Search students by name..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-1 min-w-[200px] py-3 px-4 border border-[#8b95a5] rounded-md"
               />
-              <select className="flex-1 min-w-[200px] py-3 px-4 border border-[#8b95a5] rounded-md">
+              <select
+                value={weekFilter}
+                onChange={(e) => setWeekFilter(e.target.value)}
+                className="flex-1 min-w-[200px] py-3 px-4 border border-[#8b95a5] rounded-md"
+              >
                 <option value="">All Weeks</option>
                 <option value="1-3">Week 1-3</option>
                 <option value="4-6">Week 4-6</option>
                 <option value="7-9">Week 7-9</option>
                 <option value="10-12">Week 10-12</option>
               </select>
-              <select className="flex-1 min-w-[200px] py-3 px-4 border border-[#8b95a5] rounded-md">
+              <select
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+                className="flex-1 min-w-[200px] py-3 px-4 border border-[#8b95a5] rounded-md"
+              >
                 <option value="">All Status</option>
                 <option value="on-track">On Track</option>
                 <option value="at-risk">At Risk</option>
@@ -115,118 +215,48 @@ const Admin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
-                    <td className="p-4">
-                      <strong>Dr. Sarah Chen</strong>
-                    </td>
-                    <td className="p-4">Week 12</td>
-                    <td className="p-4">
-                      <div className="bg-[#e8eaed] h-6 rounded-xl overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#28a745] to-[#d4af37] rounded-xl flex items-center justify-center text-white font-semibold text-[0.85rem]"
-                          style={{ width: "100%" }}
-                        >
-                          100%
-                        </div>
-                      </div>
-                    </td>
-                    <td className="p-4">92%</td>
-                    <td className="p-4">2 hours ago</td>
-                    <td className="p-4">
-                      <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">
-                        On Track
-                      </span>
-                    </td>
-                    <td className="p-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">
-                        View
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
-                    <td className="p-4">
-                      <strong>Dr. Michael Johnson</strong>
-                    </td>
-                    <td className="p-4">Week 5</td>
-                    <td className="p-4">
-                      <div className="bg-[#e8eaed] h-6 rounded-xl overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#28a745] to-[#d4af37] rounded-xl flex items-center justify-center text-white font-semibold text-[0.85rem]"
-                          style={{ width: "42%" }}
-                        >
-                          42%
-                        </div>
-                      </div>
-                    </td>
-                    <td className="p-4">88%</td>
-                    <td className="p-4">5 hours ago</td>
-                    <td className="p-4">
-                      <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#ffc107] text-[#1a2332]">
-                        At Risk
-                      </span>
-                    </td>
-                    <td className="p-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">
-                        View
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
-                    <td className="p-4">
-                      <strong>Dr. Lisa Martinez</strong>
-                    </td>
-                    <td className="p-4">Week 8</td>
-                    <td className="p-4">
-                      <div className="bg-[#e8eaed] h-6 rounded-xl overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#28a745] to-[#d4af37] rounded-xl flex items-center justify-center text-white font-semibold text-[0.85rem]"
-                          style={{ width: "67%" }}
-                        >
-                          67%
-                        </div>
-                      </div>
-                    </td>
-                    <td className="p-4">94%</td>
-                    <td className="p-4">1 day ago</td>
-                    <td className="p-4">
-                      <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#28a745] text-white">
-                        On Track
-                      </span>
-                    </td>
-                    <td className="p-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">
-                        View
-                      </button>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-[#e8eaed] hover:bg-[#e8eaed]">
-                    <td className="p-4">
-                      <strong>Dr. James Williams</strong>
-                    </td>
-                    <td className="p-4">Week 3</td>
-                    <td className="p-4">
-                      <div className="bg-[#e8eaed] h-6 rounded-xl overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#28a745] to-[#d4af37] rounded-xl flex items-center justify-center text-white font-semibold text-[0.85rem]"
-                          style={{ width: "18%" }}
-                        >
-                          18%
-                        </div>
-                      </div>
-                    </td>
-                    <td className="p-4">76%</td>
-                    <td className="p-4">3 days ago</td>
-                    <td className="p-4">
-                      <span className="inline-block py-1 px-3 rounded-xl text-[0.85rem] font-semibold bg-[#dc3545] text-white">
-                        Needs Attention
-                      </span>
-                    </td>
-                    <td className="p-4">
-                      <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">
-                        View
-                      </button>
-                    </td>
-                  </tr>
+                  {filteredStudents.length > 0 ? (
+                    filteredStudents.map((student) => (
+                      <tr
+                        key={student.id}
+                        className="border-b border-[#e8eaed] hover:bg-[#e8eaed]"
+                      >
+                        <td className="p-4">
+                          <strong>{student.name}</strong>
+                        </td>
+                        <td className="p-4">Week {student.currentWeek}</td>
+                        <td className="p-4">
+                          <div className="bg-[#e8eaed] h-6 rounded-xl overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#28a745] to-[#d4af37] rounded-xl flex items-center justify-center text-white font-semibold text-[0.85rem]"
+                              style={{ width: `${student.progress}%` }}
+                            >
+                              {student.progress}%
+                            </div>
+                          </div>
+                        </td>
+                        <td className="p-4">{student.quizAvg}%</td>
+                        <td className="p-4">{student.lastActivity}</td>
+                        <td className="p-4">
+                          {getStatusBadge(student.status)}
+                        </td>
+                        <td className="p-4">
+                          <button className="py-2 px-4 rounded-md text-[0.875rem] font-semibold border-none bg-[#1a2332] text-white hover:bg-[#2d3e50] transition-all">
+                            View
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td
+                        colSpan="7"
+                        className="p-8 text-center text-[#8b95a5]"
+                      >
+                        No students found matching your filters.
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
