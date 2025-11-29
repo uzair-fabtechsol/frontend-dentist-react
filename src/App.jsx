@@ -12,6 +12,7 @@ import Week2LessonPage from "./pages/Week2LessonPage";
 import CertificationsPage from "./pages/CertificationsPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import MasteryDashboardPage from "./pages/MasteryDashboardPage";
+import Week1CaseStudyPage from "./pages/Week1CaseStudyPage";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         <Route path="how-to-use" element={<HowToUsePage />} />
         <Route path="dashboard" element={<DashboardPage />} />
         <Route path="week2-lesson" element={<Week2LessonPage />} />
+        <Route path="week1-case-study" element={<Week1CaseStudyPage />} />
+        <Route path="week1-lesson" element={<Week2LessonPage />} />
+        <Route path="week1-quiz" element={<Week2LessonPage />} />
         <Route path="certifications" element={<CertificationsPage />} />
         <Route path="mastery-dashboard" element={<MasteryDashboardPage />} />
         <Route path="curriculum" element={<CurriculumPage />} />
